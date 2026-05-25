@@ -14,9 +14,9 @@ const perspective: Variants = {
         translateX: 0,
         translateY: 0,
         transition: {
-            duration: 0.65,
-            delay: 0.4 + i * 0.14,
-            opacity: { duration: 0.45, delay: 0.5 },
+            duration: 0.75,
+            delay: 0.5 + i * 0.14,
+            opacity: { duration: 0.55, delay: 0.5 },
             ease: [.251, .61, .355, 1]
         }
     }),

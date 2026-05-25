@@ -5,8 +5,8 @@ import { Nav } from "./components/Nav";
 
 const variants: Variants = {
   open: {
-    width: "600px",
-    height: "420px",
+    width: "min(600px, 90vw)",
+    height: "min(420px, 80vh)",
     top: "-25px",
     right: "-25px",
     transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] }
@@ -26,7 +26,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <div className="fixed right-25 top-12.5 z-50">
+      <div className="fixed right-8 top-10 md:right-25 md:top-12.5 z-50">
 
         <motion.div variants={variants} animate={isAnimate ? "open" : 'closed'} initial='closed'
           className="relative  bg-green-200 rounded-4xl">
