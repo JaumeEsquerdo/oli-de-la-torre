@@ -1,19 +1,23 @@
 'use client'
-import { motion } from "framer-motion";
+import { AnimatePresence, motion, Variants } from "framer-motion";
 import { useState } from "react";
+import { Nav } from "./components/Nav";
 
-const variants = {
+const variants: Variants = {
   open: {
     width: "600px",
     height: "420px",
     top: "-25px",
-    right: "-25px"
+    right: "-25px",
+    transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] }
+
   },
   closed: {
-    width: "100px",
+    width: "40px",
     height: "40px",
     top: "0px",
-    right: "0px"
+    right: "0px",
+    transition: { delay: 0.35, duration: 0.75, ease: [0.76, 0, 0.24, 1] }
   }
 }
 
@@ -22,18 +26,35 @@ export default function Home() {
 
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <div className="fixed right-[100px] top-[50px] z-50">
+      <div className="fixed right-25 top-12.5 z-50">
 
         <motion.div variants={variants} animate={isAnimate ? "open" : 'closed'} initial='closed'
-          transition={{ duration: 0.75, ease: [0.76, 0, 0.24, 1] }}
-          className="relative  bg-amber-600 rounded-2xl">
+          className="relative  bg-green-200 rounded-4xl">
 
+          <AnimatePresence>
+            {isAnimate && <Nav />}
+          </AnimatePresence>
 
         </motion.div>
+
         <button
           onClick={() => setIsAnimate((prev) => !prev)}
-          className="absolute top-0 right-0 bg-green-50 rounded-2xl h-10 w-25">
-          button Menu
+          className="absolute cursor-pointer top-0 right-0 bg-black rounded-4xl h-10 w-10 flex flex-col justify-center items-center ">
+          <span
+            className={`
+      absolute  h-0.5 w-5 bg-white rounded-2xl
+      transition-all duration-300
+      ${isAnimate ? "rotate-45" : "-translate-y-1"}
+    `}
+          />
+
+          <span
+            className={`
+      absolute  h-0.5 w-5 bg-white rounded-2xl
+      transition-all duration-300
+      ${isAnimate ? "-rotate-50" : "translate-y-1"}
+    `}
+          />
         </button>
 
       </div>
