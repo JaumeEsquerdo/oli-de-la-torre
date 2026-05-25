@@ -16,7 +16,7 @@ const perspective: Variants = {
         transition: {
             duration: 0.75,
             delay: 0.5 + i * 0.14,
-            opacity: { duration: 0.55, delay: 0.5 },
+            opacity: { duration: 0.55, delay: 0.5 + i * 0.14, },
             ease: [.251, .61, .355, 1]
         }
     }),
