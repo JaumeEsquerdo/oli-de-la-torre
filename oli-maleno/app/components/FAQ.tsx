@@ -16,6 +16,18 @@ const dataFAQ: FaqItem[] = [
     {
         title: "faq 2",
         description: "description faq 2...."
+    },
+    {
+        title: "faq 3",
+        description: "description faq 3...."
+    },
+    {
+        title: "faq 4",
+        description: "description faq 4...."
+    },
+    {
+        title: "faq 5",
+        description: "description faq 5...."
     }
 ]
 
