@@ -2,6 +2,7 @@
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import { useState } from "react";
 import { Nav } from "./components/Nav";
+import { FAQ } from "./components/FAQ";
 
 const variants: Variants = {
   open: {
@@ -25,7 +26,7 @@ export default function Home() {
   const [isAnimate, setIsAnimate] = useState(false)
 
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+    <div className="flex flex-col flex-1 items-center justify-center bg-white">
       <div className="fixed right-8 top-10 md:right-25 md:top-12.5 z-50">
 
         <motion.div variants={variants} animate={isAnimate ? "open" : 'closed'} initial='closed'
@@ -39,7 +40,7 @@ export default function Home() {
 
         <button
           onClick={() => setIsAnimate((prev) => !prev)}
-          className="absolute cursor-pointer top-0 right-0 bg-black rounded-4xl h-10 w-10 flex flex-col justify-center items-center ">
+          className="absolute cursor-pointer top-0 right-0 bg-black rounded-4xl h-10 w-10 flex flex-col justify-center items-center hover:opacity-85 duration-100 transition-all">
           <span
             className={`
       absolute  h-0.5 w-5 bg-white rounded-2xl
@@ -58,8 +59,9 @@ export default function Home() {
         </button>
 
       </div>
-      <div className="flex-1">
-
+      <div className="flex-1 p-20 flex flex-col gap-20">
+        <FAQ />
+        <FAQ color="#15472B" textSecondary="#15472B99" />
       </div>
     </div>
   );

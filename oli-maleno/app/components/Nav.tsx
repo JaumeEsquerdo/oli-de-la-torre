@@ -62,7 +62,7 @@ export const Nav = () => {
                             initial='initial'
                             exit='exit'
                         >
-                            <a href={link.href} className='text-4xl w-fit'>
+                            <a href={link.href} className='text-4xl w-fit hover:text-black/60 duration-100 transition-colors'>
                                 {link.title}
                             </a>
                         </motion.div>
@@ -80,7 +80,7 @@ export const Nav = () => {
                     initial='initial'
                     exit='exit'
                 >
-                    <a href={link.href} className='text-xl w-fit'>
+                    <a href={link.href} className='text-xl w-fit hover:text-black/60 duration-100 transition-colors'>
                         {link.title}
                     </a>
                 </motion.div>
