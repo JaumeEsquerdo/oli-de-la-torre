@@ -10,10 +10,10 @@ export default function Home() {
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-white">
       <Menu />
-      <main className="flex-1 pt-40  w-full">
+      <main className="flex-1 pt-40 w-full overflow-hidden">
 
         {/* HERO con nav en contenedores */}
-        <div className="flex flex-col md:flex-row md:mx-8 md:gap-4 items-center">
+        <div className="flex flex-col md:flex-row md:mx-8 md:gap-4 items-center ">
           <Hero />
         </div>
       </main>
