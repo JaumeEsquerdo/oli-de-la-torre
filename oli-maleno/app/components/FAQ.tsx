@@ -1,6 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react';
-import { text } from 'stream/consumers';
 
 interface FaqItem {
     title: string;

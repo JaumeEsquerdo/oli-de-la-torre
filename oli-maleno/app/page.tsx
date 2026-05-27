@@ -2,7 +2,8 @@
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import { useState } from "react";
 import { Nav } from "./components/Nav";
-import { FAQ } from "./components/FAQ";
+import { Hero } from "./components/Hero";
+// import { FAQ } from "./components/FAQ";
 
 const variants: Variants = {
   open: {
@@ -62,18 +63,8 @@ export default function Home() {
       <main className="flex-1 pt-40  w-full">
 
         {/* HERO con nav en contenedores */}
-        <div className="flex flex-col md:flex-row md:mx-8 md:gap-8 items-center">
-          <div className="w-11/12 h-[60dvh] md:w-1/2 md:h-[70dvh] bg-red-300 p-8 rounded-4xl">
-            <h2 className="text-4xl">Productos</h2>
-          </div>
-          <div className="hidden md:flex md:flex-col md:w-1/2 md:gap-8">
-            <div className="w-11/12 h-[40dvh] md:w-full md:h-[calc(35dvh-1rem)] bg-green-300 p-8 z-10 -mt-10 md:mt-0 rounded-4xl">
-              <h2 className="text-4xl">Beneficios</h2>
-            </div>
-            <div className="w-11/12 h-[40dvh] md:w-full md:h-[calc(35dvh-1rem)] bg-yellow-300 p-8 z-20 -mt-10 md:mt-0 rounded-4xl">
-              <h2 className="text-4xl">Preguntas frecuentes</h2>
-            </div>
-          </div>
+        <div className="flex flex-col md:flex-row md:mx-8 md:gap-4 items-center">
+          <Hero />
         </div>
       </main>
     </div>
