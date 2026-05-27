@@ -41,7 +41,7 @@ export const Hero = () => {
     return (
         <>
             <motion.div variants={variantContainerLeft} initial='initial' animate='show' whileHover={hoverState} transition={{ duration: 1.4, ease: "easeInOut" }}
-                className="w-11/12 h-[60dvh] md:w-1/2 md:h-[70dvh] bg-red-800/80 p-8 rounded-4xl">
+                className="cursor-pointer w-11/12 h-[60dvh] md:w-1/2 md:h-[70dvh] bg-red-800/80 p-8 rounded-4xl">
                 <div className="flex items-center gap-3">
                     <span className="h-4 w-4 rounded-full bg-white" /> {/* círculo */}
                     <div className="h-10 overflow-hidden relative">
@@ -65,7 +65,7 @@ export const Hero = () => {
             </motion.div >
 
             <div className="gap-0 flex flex-col items-center md:w-1/2 md:gap-4 ">
-                <motion.div variants={variantContainerRight} initial='initial' animate='show' whileHover={hoverState} transition={{ duration: 1.2, delay: 0.4, ease: "easeInOut" }} className="w-11/12 h-[40dvh] md:w-full md:h-[calc(35dvh-0.5rem)] bg-green-800/80 p-8 z-10 -mt-10 md:mt-0 rounded-4xl">
+                <motion.div variants={variantContainerRight} initial='initial' animate='show' whileHover={hoverState} transition={{ duration: 1.2, delay: 0.4, ease: "easeInOut" }} className="cursor-pointer w-11/12 h-[40dvh] md:w-full md:h-[calc(35dvh-0.5rem)] bg-green-800/80 p-8 z-10 -mt-10 md:mt-0 rounded-4xl">
                     <div className="flex items-center gap-3">
                         <span className="h-4 w-4 rounded-full bg-white" /> {/* círculo */}
                         <div className="h-10 overflow-hidden relative ">
@@ -81,7 +81,7 @@ export const Hero = () => {
                     </div>
                 </motion.div>
 
-                <motion.div variants={variantContainerRight} initial='initial' animate='show' whileHover={hoverState} transition={{ duration: 1, delay: 1, ease: "easeInOut" }} className="w-11/12 h-[40dvh] md:w-full md:h-[calc(35dvh-0.5rem)] bg-yellow-800/80 p-8 z-20 -mt-10 md:mt-0 rounded-4xl">
+                <motion.div variants={variantContainerRight} initial='initial' animate='show' whileHover={hoverState} transition={{ duration: 1, delay: 1, ease: "easeInOut" }} className="cursor-pointer w-11/12 h-[40dvh] md:w-full md:h-[calc(35dvh-0.5rem)] bg-yellow-800/80 p-8 z-20 -mt-10 md:mt-0 rounded-4xl">
                     <div className="flex items-center gap-3">
                         <span className="h-4 w-4 rounded-full bg-white" /> {/* círculo */}
                         <div className="h-20 md:h-10 overflow-hidden relative ">
