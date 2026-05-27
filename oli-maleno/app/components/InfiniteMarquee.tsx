@@ -14,15 +14,15 @@ export default function InfiniteMarquee() {
   // 3. Transformamos el scroll en velocidad extra
   const scrollVelocity = useTransform(scrollYProgress, [0, 1], [0, -20]);
 
-  // 4. ¡Aquí está la corrección! Transformamos el número de baseX a string con un "%"
+  // 4. Transformamos el número de baseX a string con un "%"
   // useTransform acepta una función como tercer argumento para formatear el valor
   const xPercent = useTransform(baseX, (v) => `${v}%`);
 
-  // 5. El bucle de animación a 60fps
+  // 5. El bucle de animación
   useAnimationFrame(() => {
     if (!containerRef.current) return;
 
-    const baseSpeed = 0.012; // Velocidad de crucero automatica (ajústala a tu gusto)
+    const baseSpeed = 0.012; // velocidad base
 
     // Sumamos el movimiento constante + el empuje del scroll
     let newX = baseX.get() - baseSpeed + scrollVelocity.get() * 0.006;
