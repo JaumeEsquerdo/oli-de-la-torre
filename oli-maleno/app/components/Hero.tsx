@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 const variantsText = {
     initial: { y: 0 },
@@ -6,9 +7,25 @@ const variantsText = {
 };
 
 export const Hero = () => {
+    const [isDesktop, setIsDesktop] = useState(false);
+
+    useEffect(() => {
+        // Comprobar si la pantalla es tamaño MD de Tailwind (768px) o más
+        const media = window.matchMedia("(min-width: 768px)");
+
+        const listener = (e: MediaQueryListEvent | { matches: boolean }) => setIsDesktop(e.matches);
+        /* evaluar el estado inicial */
+        listener(media)
+
+        media.addEventListener("change", listener);
+        return () => media.removeEventListener("change", listener);
+    }, []);
+
+    // Si es desktop activa "hover", si es móvil se queda en "initial" (desactivado)
+    const hoverState = isDesktop ? "hover" : "initial";
     return (
         <>
-            <motion.div initial='initial' whileHover='hover' className="w-11/12 h-[60dvh] md:w-1/2 md:h-[70dvh] bg-red-300 p-8 rounded-4xl">
+            <motion.div initial='initial' whileHover={hoverState} className="w-11/12 h-[60dvh] md:w-1/2 md:h-[70dvh] bg-red-300 p-8 rounded-4xl">
                 <div className="h-10 overflow-hidden relative ">
                     <motion.div
                         variants={variantsText}
@@ -27,9 +44,9 @@ export const Hero = () => {
                     </motion.div>
                 </div>
             </motion.div>
-            <div className="hidden md:flex md:flex-col md:w-1/2 md:gap-4">
 
-                <motion.div initial='initial' whileHover='hover' className="w-11/12 h-[40dvh] md:w-full md:h-[calc(35dvh-0.5rem)] bg-green-300 p-8 z-10 -mt-10 md:mt-0 rounded-4xl">
+            <div className="gap-0 flex flex-col items-center md:w-1/2 md:gap-4 ">
+                <motion.div initial='initial' whileHover={hoverState} className="w-11/12 h-[40dvh] md:w-full md:h-[calc(35dvh-0.5rem)] bg-green-300 p-8 z-10 -mt-10 md:mt-0 rounded-4xl">
                     <div className="h-10 overflow-hidden relative ">
                         <motion.div
                             variants={variantsText}
@@ -42,15 +59,15 @@ export const Hero = () => {
                     </div>
                 </motion.div>
 
-                <motion.div initial='initial' whileHover='hover' className="w-11/12 h-[40dvh] md:w-full md:h-[calc(35dvh-0.5rem)] bg-yellow-300 p-8 z-20 -mt-10 md:mt-0 rounded-4xl">
-                    <div className="h-10 overflow-hidden relative ">
+                <motion.div initial='initial' whileHover={hoverState} className="w-11/12 h-[40dvh] md:w-full md:h-[calc(35dvh-0.5rem)] bg-yellow-300 p-8 z-20 -mt-10 md:mt-0 rounded-4xl">
+                    <div className="h-20 md:h-10 overflow-hidden relative ">
                         <motion.div
                             variants={variantsText}
                             transition={{ duration: 0.3, ease: "easeInOut" }}
                             className="flex flex-col"
                         >
-                            <h2 className="text-4xl leading-none h-10 flex items-center">Preguntas Frecuentes</h2>
-                            <h2 className="text-4xl leading-none h-10 flex items-center">Preguntas Frecuentes</h2>
+                            <h2 className="text-4xl leading-none h-20 md:h-10 flex items-center">Preguntas Frecuentes</h2>
+                            <h2 className="text-4xl leading-none h-20 md:h-10 flex items-center">Preguntas Frecuentes</h2>
                         </motion.div>
                     </div>
                 </motion.div>
