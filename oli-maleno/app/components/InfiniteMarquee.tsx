@@ -12,7 +12,7 @@ export default function InfiniteMarquee() {
   const { scrollYProgress } = useScroll();
 
   // 3. Transformamos el scroll en velocidad extra
-  const scrollVelocity = useTransform(scrollYProgress, [0, 1], [0, -20]);
+  const scrollVelocity = useTransform(scrollYProgress, [0, 1], [0, -10]);
 
   // 4. Transformamos el número de baseX a string con un "%"
   // useTransform acepta una función como tercer argumento para formatear el valor
@@ -22,7 +22,7 @@ export default function InfiniteMarquee() {
   useAnimationFrame(() => {
     if (!containerRef.current) return;
 
-    const baseSpeed = 0.012; // velocidad base
+    const baseSpeed = 0.008; // velocidad base
 
     // Sumamos el movimiento constante + el empuje del scroll
     let newX = baseX.get() - baseSpeed + scrollVelocity.get() * 0.0026;

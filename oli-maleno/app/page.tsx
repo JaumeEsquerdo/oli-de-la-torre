@@ -19,9 +19,16 @@ export default function Home() {
           <Hero />
         </div>
         <InfiniteMarquee />
-        <div className="h-400 bg-amber-50">
-          <p>nuestros productos</p>
-          <Productos />
+        <div className="h-fit bg-amber-50 flex flex-col gap-10 px-4 md:p-12">
+          <h2 className="text-2xl text-center md:text-start">descubre nuestros productos</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 place-items-center">
+            <Productos />
+            <Productos />
+            <Productos />
+            <Productos />
+            <Productos />
+            <Productos />
+          </div>
         </div>
       </main>
     </div>

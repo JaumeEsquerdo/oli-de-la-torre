@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus } from "lucide-react";
+import Image from "next/image";
 
 export const Productos = () => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -8,15 +9,19 @@ export const Productos = () => {
         <motion.div layout
             onMouseEnter={() => setIsExpanded(true)}
             onMouseLeave={() => setIsExpanded(false)}
-            onClick={() => setIsExpanded(!isExpanded)} className="h-40 w-60 p-4 bg-gray-100 rounded-2xl cursor-pointer">
-            <div className="h-full w-full flex gap-3 items-end justify-end">
+            onClick={() => setIsExpanded(!isExpanded)} className="h-60 w-80 p-4 relative bg-gray-100 rounded-2xl cursor-pointer">
+            <Image src="/assets/imgs/aceite12.jpeg"
+                fill
+                sizes="240px"
+                //   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                className="h-full w-full object-cover rounded-2xl" alt="" />
+            <div className="absolute inset-0 h-full w-full flex gap-3 items-end justify-end p-2">
                 <AnimatePresence mode="wait">
                     {isExpanded && (
                         <motion.span
                             initial={{ opacity: 0, width: 0 }}
                             animate={{ opacity: 1, width: "auto" }}
                             exit={{ opacity: 0, width: 0 }}
-
                             className="whitespace-nowrap text-sm font-light p-2 bg-white rounded-2xl overflow-hidden"
                         >
                             Añadir producto
