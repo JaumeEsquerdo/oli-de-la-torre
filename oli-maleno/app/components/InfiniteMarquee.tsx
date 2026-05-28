@@ -25,7 +25,7 @@ export default function InfiniteMarquee() {
     const baseSpeed = 0.012; // velocidad base
 
     // Sumamos el movimiento constante + el empuje del scroll
-    let newX = baseX.get() - baseSpeed + scrollVelocity.get() * 0.006;
+    let newX = baseX.get() - baseSpeed + scrollVelocity.get() * 0.0026;
 
     // Loop infinito al llegar al -50%
     if (newX <= -50) {

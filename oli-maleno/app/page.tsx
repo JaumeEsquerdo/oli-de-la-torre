@@ -2,6 +2,7 @@
 import { Hero } from "./components/Hero";
 import InfiniteMarquee from "./components/InfiniteMarquee";
 import { Menu } from "./components/Menu";
+import { Productos } from "./components/Productos";
 // import { FAQ } from "./components/FAQ";
 
 
@@ -18,7 +19,10 @@ export default function Home() {
           <Hero />
         </div>
         <InfiniteMarquee />
-        <div className="h-1000 bg-amber-50"></div>
+        <div className="h-400 bg-amber-50">
+          <p>nuestros productos</p>
+          <Productos />
+        </div>
       </main>
     </div>
   );
