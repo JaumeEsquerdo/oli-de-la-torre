@@ -41,7 +41,7 @@ export const Menu = () => {
     }, [isAnimate, setIsAnimate]);
 
     return (
-        <div ref={MenuRef} className="fixed right-8 top-10 md:right-25 md:top-12.5 z-50">
+        <div ref={MenuRef} className="fixed right-8 top-10 md:right-8 md:top-15 z-50">
             <motion.div variants={variants} animate={isAnimate ? "open" : 'closed'} initial='closed'
                 className="relative  bg-green-200 rounded-4xl">
 

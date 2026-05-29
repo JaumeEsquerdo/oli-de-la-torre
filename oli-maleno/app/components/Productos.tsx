@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus } from "lucide-react";
+import { ShoppingCart } from "lucide-react";
 import Image from "next/image";
 
 export const Productos = () => {
@@ -36,7 +36,7 @@ export const Productos = () => {
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 >
                     <motion.div layout style={{ display: "flex", alignItems: "center" }}>
-                        <Plus size={20} strokeWidth={2.5} />
+                        <ShoppingCart size={20} strokeWidth={2} />
                     </motion.div>
 
                 </motion.button>
