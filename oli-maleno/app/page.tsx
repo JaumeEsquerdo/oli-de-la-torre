@@ -1,4 +1,5 @@
 'use client'
+import { AnimatedCard } from "./components/AnimatedCard";
 import { Benefits } from "./components/Benefits";
 import { Hero } from "./components/Hero";
 import InfiniteMarquee from "./components/InfiniteMarquee";
@@ -13,7 +14,7 @@ import { ShoppingCart } from "lucide-react";
 export default function Home() {
 
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-white">
+    <div className="flex flex-col flex-1 items-center justify-center bg-white overflow-hidden">
       <span className="absolute top-2 left-1/2 -translate-x-1/2 text-sm text-[#666]">envíos gratuitos con pedidos superior a 100€</span>
       <header className="flex justify-between pt-10 pl-10 pr-26 w-full relative items-center">
         <div className="flex flex-col items-center">
@@ -28,7 +29,7 @@ export default function Home() {
         <Menu />
 
       </header>
-      <main className="flex flex-col gap-8 flex-1 pt-8 w-full overflow-hidden">
+      <main className="flex flex-col gap-8 flex-1 pt-8 w-full">
 
         {/* HERO con nav en contenedores */}
         <div className="flex flex-col md:flex-row md:mx-8 md:gap-4 items-center ">
@@ -51,6 +52,9 @@ export default function Home() {
 
         <Benefits />
 
+        {/* seccion TARJETA ANIMADA  */}
+        <AnimatedCard />
+        <div className="h-screen bg-amber-300 pt-40"></div>
       </main>
     </div>
   );
