@@ -27,7 +27,7 @@ export const AnimatedCard = () => {
     // const opacity = useTransform(scrollYProgress, [0, 0.9, 1], [0, 1, 1])
 
     return (
-        <div ref={containerRef} className="min-h-screen h-screen flex flex-col items-center w-full overflow-hidden pt-40">
+        <div ref={containerRef} className="min-h-screen h-[140vh] flex flex-col items-center w-full overflow-hidden pt-40">
             {/* <div className="sticky top-0 h-screen w-full flex items-center justify-center"> */}
             <motion.div style={{ x: moveX, borderRadius: radius }} className="w-[80dvw] h-[80dvh] bg-amber-800  flex flex-col justify-end px-12 py-20">
                 <motion.div variants={vairantText} initial='initial' whileInView='animate' viewport={{ amount: 0.9 }} className="flex flex-col gap-8">
