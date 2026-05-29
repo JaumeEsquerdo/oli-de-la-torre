@@ -24,7 +24,7 @@ export const AnimatedCard = () => {
 
     const moveX = useTransform(scrollYProgress, [0, 0.7], [1800, 0])
     const radius = useTransform(scrollYProgress, [0.2, 0.6], [0, 80])
-    const opacity = useTransform(scrollYProgress, [0, 0.9, 1], [0, 1, 1])
+    // const opacity = useTransform(scrollYProgress, [0, 0.9, 1], [0, 1, 1])
 
     return (
         <div ref={containerRef} className="min-h-screen h-screen flex flex-col items-center w-full overflow-hidden pt-40">
