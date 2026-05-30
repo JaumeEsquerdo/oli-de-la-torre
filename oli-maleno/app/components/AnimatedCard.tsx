@@ -43,14 +43,14 @@ export const AnimatedCard = () => {
     })
 
     const moveX = useTransform(scrollEntrada, [0, 0.7], [1800, 0], { clamp: true })
-    const radius = useTransform(scrollEntrada, [0.4, 0.7], [0, 80], { clamp: true })
+    const radius = useTransform(scrollEntrada, [0.4, 0.7], [0, 100], { clamp: true })
     // const opacity = useTransform(scrollYProgress, [0, 0.9, 1], [0, 1, 1])
     const overlayOpacity = useTransform(scrollTexto, [0, 0.2], [0, 0.4], { clamp: true })
 
     return (
-        <div ref={containerRef} className="min-h-screen h-[140vh] flex flex-col items-center w-full overflow-hidden pt-50">
+        <div ref={containerRef} className="min-h-screen h-[140vh] flex flex-col items-center w-full overflow-hidden p-8 pt-50">
             {/* <div className="sticky top-0 h-screen w-full flex items-center justify-center"> */}
-            <motion.div style={{ x: moveX, borderRadius: radius }} className="relative w-[90dvw] h-[90dvh] bg-amber-200  flex flex-col justify-end px-12 py-20 overflow-hidden">
+            <motion.div style={{ x: moveX, borderRadius: radius }} className="relative w-[100dvw] h-[90dvh] bg-amber-200  flex flex-col justify-end px-12 py-20 overflow-hidden">
 
                 <motion.div
                     // variants={variantOverlay}
