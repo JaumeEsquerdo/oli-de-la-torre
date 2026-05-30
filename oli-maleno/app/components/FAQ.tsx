@@ -40,7 +40,9 @@ export const FAQ = ({ color = "#000000", textSecondary = "#666666" }) => {
         setPressedTab((prev) => (prev === title ? null : title));
     };
     return (
-        <div className="h-fit w-fit">
+        <div className="h-fit w-fit "
+            onMouseLeave={() => setHoveredTab(null)}
+        >
             {
                 dataFAQ.map((data, i) => {
 
@@ -50,9 +52,10 @@ export const FAQ = ({ color = "#000000", textSecondary = "#666666" }) => {
 
 
                     return (
-                        <motion.div key={data.title}
+                        <motion.div
+                            key={data.title}
                             onMouseEnter={() => setHoveredTab(data.title)}
-                            onMouseLeave={() => setHoveredTab(null)}
+                            // onMouseLeave={() => setHoveredTab(null)}
                             onMouseDown={() => handlePress(data.title)}
                             animate={{
                                 height: isPressed ? "400px" : "80px"
@@ -63,8 +66,7 @@ export const FAQ = ({ color = "#000000", textSecondary = "#666666" }) => {
                                 damping: 30
                             }}
                             style={{ backgroundColor: 'white' }}
-                            className={`relative w-100 rounded-4xl flex justify-center items-start cursor-pointer overflow-hidden  ${isHovered && " text-white"}  duration-200 transition-colors ${i > 0 ? "-mt-0.5" : ""}`}>
-
+                            className={`relative w-100 rounded-4xl flex justify-center items-start cursor-pointer z-20  ${isHovered && " text-white"}  duration-200 transition-colors ${i > 0 ? "-mt-0.5" : ""}`}>
 
 
                             {/* borde q no se oculta con la burbuja del hover */}
@@ -72,7 +74,7 @@ export const FAQ = ({ color = "#000000", textSecondary = "#666666" }) => {
                             {/* CONTENEDOR DEL TÍTULO: Controla el hover individualmente */}
                             <div
                                 onMouseEnter={() => setHoveredTab(data.title)}
-                                onMouseLeave={() => setHoveredTab(null)}
+                                // onMouseLeave={() => setHoveredTab(null)}
                                 className="absolute top-0 left-0 w-full h-20 flex items-center px-6 z-10 rounded-4xl"
                             >
                                 <span style={{ color: isHovered ? "white" : color }} className={`inline-block z-20 font-medium transition-colors duration-200  rounded-4xl`}>
@@ -84,10 +86,11 @@ export const FAQ = ({ color = "#000000", textSecondary = "#666666" }) => {
                                     <motion.div
                                         layoutId="bubble"
                                         style={{ backgroundColor: color }}
-                                        className="absolute inset-0 z-0 bg-[#${textColor}] rounded-4xl"
-                                        transition={{ type: "spring", bounce: 0.3, duration: 0.8 }}
+                                        className="absolute inset-0 w-full z-10 bg-[#${textColor}] rounded-4xl"
+                                        transition={{ type: "spring", bounce: 0.3, stiffness: 70, duration: 1 }}
                                     />
                                 )}
+
                             </div>
 
                             {/* DESCRIPCIÓN: Aparece empujando hacia abajo */}
