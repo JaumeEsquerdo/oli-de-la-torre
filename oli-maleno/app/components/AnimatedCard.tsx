@@ -15,19 +15,19 @@ const vairantText: Variants = {
     }
 }
 
-const variantOverlay: Variants = {
-    initial: {
-        opacity: 0
-    }
-    ,
-    animate: {
-        opacity: 0.4,
-        transition: {
-            duration: .8,
-            ease: 'easeOut'
-        }
-    }
-}
+// const variantOverlay: Variants = {
+//     initial: {
+//         opacity: 0
+//     }
+//     ,
+//     animate: {
+//         opacity: 0.4,
+//         transition: {
+//             duration: .8,
+//             ease: 'easeOut'
+//         }
+//     }
+// }
 
 export const AnimatedCard = () => {
     const containerRef = useRef(null)

@@ -1,8 +1,9 @@
 import { motion, Variants } from 'framer-motion'
 import { oilBenefits } from '@/app/data/benefits'
 
+// --lo-que-sea crea la variable y var() es la única función que acepta un valor de respaldo por si la variable falla
 const variantTitleLeft: Variants = {
-    initial: { x: 800, y: 140 },
+    initial: { x: 'var(--slide-x-left, 80px)', y: 'var(--slide-y, 30px)' },
     animate: {
         x: 0, y: 0,
         transition: { type: 'spring', stiffness: 6 }
@@ -10,7 +11,10 @@ const variantTitleLeft: Variants = {
     }
 }
 const variantTitleRight: Variants = {
-    initial: { x: -800, y: 120 },
+    initial: {
+        x: 'var(--slide-x-right, -80px)',
+        y: 'var(--slide-y, 30px)',
+    },
     animate: {
         x: 0, y: 0,
         transition: { type: 'spring', stiffness: 6 }
@@ -33,9 +37,10 @@ const variantIcon: Variants = {
 export const Benefits = () => {
     return (
         <div className="flex flex-col items-center px-10 pt-20">
-            <div className="flex flex-col gap-8 w-[90%] md:w-[50%]">
-                <motion.h2 variants={variantTitleRight} initial='initial' whileInView='animate' viewport={{ once: true, amount: 0.1 }} className="text-7xl text-[#666] text-start w-full">los beneficios del</motion.h2>
-                <motion.h2 variants={variantTitleLeft} initial='initial' whileInView='animate' viewport={{ once: true, amount: 0.1 }} className="text-7xl text-end w-full">aceite de oliva virgen</motion.h2>
+            <div className="flex flex-col gap-8 w-[90%] md:w-[50%] [--slide-y:30px] [--slide-x-left:80px] [--slide-x-right:-80px]
+            md:[--slide-y:140px] md:[--slide-x-left:800px] md:[--slide-x-right:-800px]">
+                <motion.h2 variants={variantTitleRight} initial='initial' whileInView='animate' viewport={{ once: true, amount: 0.1 }} className="text-4xl sm:text-5xl md:text-7xl text-[#666] text-start w-full">los beneficios del</motion.h2>
+                <motion.h2 variants={variantTitleLeft} initial='initial' whileInView='animate' viewport={{ once: true, amount: 0.1 }} className="text-4xl sm:text-5xl md:text-7xl text-end w-full">aceite de oliva virgen</motion.h2>
             </div>
             <div className='flex flex-col gap-8 pt-20'>
 
