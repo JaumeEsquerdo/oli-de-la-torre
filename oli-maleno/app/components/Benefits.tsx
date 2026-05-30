@@ -22,6 +22,7 @@ const variantIcon: Variants = {
     animate: {
         scale: 1,
         transition: {
+            delay: 0.4,
             duration: 0.8,
             ease: 'easeOut'
         }

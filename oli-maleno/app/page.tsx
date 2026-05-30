@@ -7,7 +7,7 @@ import { Menu } from "./components/Menu";
 import { Productos } from "./components/Productos";
 import { motion } from 'framer-motion'
 import { ShoppingCart } from "lucide-react";
-// import { FAQ } from "./components/FAQ";
+import { FAQ } from "./components/FAQ";
 
 
 
@@ -54,7 +54,10 @@ export default function Home() {
 
         {/* seccion TARJETA ANIMADA  */}
         <AnimatedCard />
-        <div className="h-screen bg-amber-300 pt-40"></div>
+        <div className="h-fit w-full bg-amber-50 flex flex-col md:flex-row justify-between px-4 md:p-12">
+          <h2 className="text-2xl text-center md:text-start">descubre nuestros productos</h2>
+          <FAQ />
+        </div>
       </main>
     </div>
   );
