@@ -8,6 +8,8 @@ import { Productos } from "./components/Productos";
 import { motion } from 'framer-motion'
 import { ShoppingCart } from "lucide-react";
 import { FAQ } from "./components/FAQ";
+import ContactForm from "./components/Contacto";
+import { Footer } from "./components/Footer";
 
 
 
@@ -54,11 +56,17 @@ export default function Home() {
 
         {/* seccion TARJETA ANIMADA  */}
         <AnimatedCard />
+        {/* seccion FAQ */}
         <div className="h-fit w-full bg-amber-50 flex flex-col md:flex-row justify-between px-4 md:p-12">
           <h2 className="text-2xl text-center md:text-start">descubre nuestros productos</h2>
           <FAQ />
         </div>
+        {/* seccion FORMULARIO */}
+        <div className="px-4 md:p-12 flex justify-start w-full">
+          <ContactForm />
+        </div>
       </main>
+      <Footer />
     </div>
   );
 }

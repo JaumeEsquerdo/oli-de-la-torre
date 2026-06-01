@@ -78,7 +78,7 @@ export default function InfiniteMarquee() {
       className="w-full overflow-hidden py-3 whitespace-nowrap flex">
       <motion.div
         ref={containerRef}
-        className="flex gap-6"
+        className="flex gap-6 pointer-events-none"
         // Mapeamos el valor numérico de baseX a porcentaje de forma dinámica
         style={{ x: xPercent }}
       >
