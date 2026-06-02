@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-white overflow-hidden">
       <span className="absolute top-2 left-1/2 -translate-x-1/2 text-sm text-[#666]">envíos gratuitos con pedidos superior a 100€</span>
-      <header className="flex justify-between pt-10 pl-10 pr-26 w-full relative items-center">
+      <header className="flex justify-between pt-10 pl-12 pr-28 w-full relative items-center">
         <div className="flex flex-col items-center">
           <span className="text-xl">OLI DE LA TORRE</span>
           <span className="font-light">X</span>
@@ -34,7 +34,7 @@ export default function Home() {
       <main className="flex flex-col gap-8 flex-1 pt-8 w-full">
 
         {/* HERO con nav en contenedores */}
-        <div className="flex flex-col md:flex-row md:mx-8 md:gap-4 items-center ">
+        <div className="flex flex-col md:flex-row md:mx-12 md:gap-4 items-center ">
           <Hero />
         </div>
         <InfiniteMarquee />
