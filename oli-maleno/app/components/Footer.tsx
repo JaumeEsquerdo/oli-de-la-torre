@@ -39,7 +39,7 @@ export const Footer = () => {
                 </div>
             </div>
 
-            <div className='relative flex flex-col gap-8 md:gap-0 md:flex-row justify-between items-center '>
+            <div className='relative flex flex-col gap-8 md:gap-0 md:flex-row justify-between items-end '>
 
                 <div className="flex flex-col items-center">
                     <span className="text-xl">OLI DE LA TORRE</span>
@@ -47,7 +47,7 @@ export const Footer = () => {
                     <span className="text-xl">OLI MALENO</span>
                 </div>
 
-                <span className='md:absolute md:top-1/2 md:left-1/2 md:-translate-1/2'>2026</span>
+                <span className='md:absolute md:-bottom-px md:left-1/2 md:-translate-x-1/2'>2026</span>
 
                 <a target='_blank' rel="noopener noreferrer" href="https://www.linkedin.com/in/jaume-esquerdo/" className='hover:text-black/80 duration-100 transition-colors'>web creada por Jaume</a>
 
