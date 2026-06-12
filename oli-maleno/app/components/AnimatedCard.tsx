@@ -48,7 +48,7 @@ export const AnimatedCard = () => {
     const overlayOpacity = useTransform(scrollTexto, [0, 0.2], [0, 0.4], { clamp: true })
 
     return (
-        <div ref={containerRef} className="min-h-screen h-[140vh] flex flex-col items-center w-full overflow-hidden p-8 pt-50">
+        <div ref={containerRef} className="min-h-screen h-[134vh] flex flex-col items-center w-full overflow-hidden p-8 pt-50">
             {/* <div className="sticky top-0 h-screen w-full flex items-center justify-center"> */}
             <motion.div style={{ x: moveX, borderRadius: radius }} className="relative w-[100dvw] h-[90dvh] bg-amber-200  flex flex-col justify-end px-12 py-20 overflow-hidden">
 
