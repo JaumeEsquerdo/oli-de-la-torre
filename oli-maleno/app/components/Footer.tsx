@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export const Footer = () => {
     return (
-        <footer className='min-h-[65vh] w-full flex flex-col gap-22 md:gap-0 justify-between px-4 py-16 md:p-12'>
+        <footer className='min-h-[70vh] w-full flex flex-col gap-22 md:gap-20 justify-between px-4 pt-24 pb-16 md:px-12'>
             <div className='w-full flex flex-col md:flex-row gap-16 md:gap-0 justify-between'>
                 {/* navs principales */}
                 <div className='w-full'>
