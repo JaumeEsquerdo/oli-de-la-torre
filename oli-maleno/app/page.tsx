@@ -31,14 +31,14 @@ export default function Home() {
         <Menu />
 
       </header>
-      <main className="flex flex-col gap-8 flex-1 pt-8 w-full">
+      <main className="flex flex-col gap-8 md:gap-20 flex-1 pt-8 md:pt-20 w-full">
 
         {/* HERO con nav en contenedores */}
         <div className="flex flex-col md:flex-row md:mx-12 md:gap-4 items-center ">
           <Hero />
         </div>
         <InfiniteMarquee />
-        <div className="h-fit bg-green-50 rounded-4xl flex flex-col gap-10 px-4 md:p-12">
+        <div className="h-fit bg-green-50 rounded-4xl flex flex-col gap-10 px-4 md:px-12 md:py-16">
           <h2 className="text-2xl text-center md:text-start">descubre nuestros productos</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 place-items-start">
             <Productos />
@@ -58,11 +58,14 @@ export default function Home() {
         <AnimatedCard />
         {/* seccion FAQ */}
         <div className="h-fit w-full flex flex-col md:flex-row justify-between px-4 md:p-12">
-          <h2 className="text-2xl text-center md:text-start">preguntas recurrentes</h2>
-          <FAQ />
+          <div className="inline-block bg-amber-600 w-1/2 h-120 rounded-4xl"></div>
+          <div className="flex flex-col justify-between gap-10">
+            <h2 className="text-2xl text-center md:text-start">preguntas recurrentes</h2>
+            <FAQ />
+          </div>
         </div>
         {/* seccion FORMULARIO */}
-        <div className="px-4 md:p-12 flex justify-start w-full">
+        <div className="px-4 md:px-12 md:py-16 flex justify-start w-full">
           <ContactForm />
         </div>
       </main>
