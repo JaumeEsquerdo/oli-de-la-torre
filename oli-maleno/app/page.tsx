@@ -38,7 +38,7 @@ export default function Home() {
           <Hero />
         </div>
         <InfiniteMarquee />
-        <div className="h-fit bg-amber-50 flex flex-col gap-10 px-4 md:p-12">
+        <div className="h-fit bg-green-50 rounded-4xl flex flex-col gap-10 px-4 md:p-12">
           <h2 className="text-2xl text-center md:text-start">descubre nuestros productos</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 place-items-start">
             <Productos />
@@ -57,8 +57,8 @@ export default function Home() {
         {/* seccion TARJETA ANIMADA  */}
         <AnimatedCard />
         {/* seccion FAQ */}
-        <div className="h-fit w-full bg-amber-50 flex flex-col md:flex-row justify-between px-4 md:p-12">
-          <h2 className="text-2xl text-center md:text-start">descubre nuestros productos</h2>
+        <div className="h-fit w-full flex flex-col md:flex-row justify-between px-4 md:p-12">
+          <h2 className="text-2xl text-center md:text-start">preguntas recurrentes</h2>
           <FAQ />
         </div>
         {/* seccion FORMULARIO */}
