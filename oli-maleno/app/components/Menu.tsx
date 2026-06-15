@@ -7,20 +7,30 @@ const variants: Variants = {
     open: {
         width: "min(600px, 90vw)",
         height: "min(420px, 80vh)",
-        top: "-25px",
-        right: "-25px",
         transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] }
 
     },
     closed: {
         width: "40px",
         height: "40px",
-        top: "0px",
-        right: "0px",
+
         transition: { delay: 0.35, duration: 0.75, ease: [0.76, 0, 0.24, 1] }
     }
 }
+
+const buttonVariants = {
+    open: {
+        x: -20,
+        y: -24,
+    },
+    closed: {
+        x: 0,
+        y: -40,
+    },
+};
+
 export const Menu = () => {
+    // const [isOpen, setIsOpen] = useState(false)
     const [isAnimate, setIsAnimate] = useState(false)
     const MenuRef = useRef<HTMLDivElement>(null)
 
@@ -40,8 +50,10 @@ export const Menu = () => {
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, [isAnimate, setIsAnimate]);
 
+
+
     return (
-        <div ref={MenuRef} className="fixed right-8 top-10 md:right-12 md:top-15 z-50">
+        <div ref={MenuRef} className="relative md:fixed md:right-12 md:top-15 z-50">
             <motion.div variants={variants} animate={isAnimate ? "open" : 'closed'} initial='closed'
                 className="relative  bg-green-200 rounded-4xl">
 
@@ -51,9 +63,22 @@ export const Menu = () => {
 
             </motion.div>
 
-            <button
-                onClick={() => setIsAnimate((prev) => !prev)}
-                className="absolute cursor-pointer top-0 right-0 bg-black rounded-4xl h-10 w-10 flex flex-col justify-center items-center hover:opacity-85 duration-100 transition-all">
+            <motion.button
+                variants={buttonVariants}
+                animate={isAnimate ? "open" : "closed"}
+                transition={{
+                    type: "spring",
+                    stiffness: 360,
+                    damping: 22,
+                    mass: 3.2
+                }}
+                onClick={() => {
+                    setIsAnimate((prev) =>
+                        !prev);
+                }
+
+                }
+                className={`absolute cursor-pointer bg-black rounded-4xl h-10 w-10 flex flex-col justify-center items-center hover:opacity-85 duration-100 transition-all`}>
                 <span
                     className={`
       absolute  h-0.5 w-5 bg-white rounded-2xl
@@ -69,9 +94,9 @@ export const Menu = () => {
       ${isAnimate ? "-rotate-50" : "translate-y-1"}
     `}
                 />
-            </button>
+            </motion.button>
 
-        </div>
+        </div >
     );
 }
 
