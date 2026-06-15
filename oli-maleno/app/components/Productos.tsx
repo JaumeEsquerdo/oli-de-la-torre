@@ -9,7 +9,7 @@ export const Productos = () => {
         <motion.div layout
             onMouseEnter={() => setIsExpanded(true)}
             onMouseLeave={() => setIsExpanded(false)}
-            onClick={() => setIsExpanded(!isExpanded)} className="h-60 w-80 p-4 relative bg-gray-100 rounded-2xl cursor-pointer">
+            onClick={() => setIsExpanded(!isExpanded)} className="h-60 w-full max-w-80 p-4 relative bg-gray-100 rounded-2xl cursor-pointer">
             <Image src="/assets/imgs/aceite12.jpeg"
                 fill
                 sizes="240px"
