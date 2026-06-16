@@ -5,29 +5,32 @@ import { Nav } from "../components/Nav";
 
 const variants: Variants = {
     open: {
-        width: "min(600px, 90vw)",
+        width: "min(600px, 80vw)",
         height: "min(420px, 80vh)",
+        top: "-20px",
+        right: "-20px",
         transition: { duration: 0.75, ease: [0.76, 0, 0.24, 1] }
 
     },
     closed: {
         width: "40px",
         height: "40px",
-
+        top: 0,
+        right: 0,
         transition: { delay: 0.35, duration: 0.75, ease: [0.76, 0, 0.24, 1] }
     }
 }
 
-const buttonVariants = {
-    open: {
-        x: -20,
-        y: -24,
-    },
-    closed: {
-        x: 0,
-        y: -40,
-    },
-};
+// const buttonVariants = {
+//     open: {
+//         x: -20,
+//         y: -24,
+//     },
+//     closed: {
+//         x: 0,
+//         y: -40,
+//     },
+// };
 
 export const Menu = () => {
     // const [isOpen, setIsOpen] = useState(false)
@@ -55,7 +58,7 @@ export const Menu = () => {
     return (
         <div ref={MenuRef} className="relative md:fixed md:right-12 md:top-15 z-50">
             <motion.div variants={variants} animate={isAnimate ? "open" : 'closed'} initial='closed'
-                className="relative  bg-green-200 rounded-4xl">
+                className="absolute top-0 right-0 z-10 bg-green-200 rounded-4xl">
 
                 <AnimatePresence>
                     {isAnimate && <Nav />}
@@ -64,21 +67,20 @@ export const Menu = () => {
             </motion.div>
 
             <motion.button
-                variants={buttonVariants}
-                animate={isAnimate ? "open" : "closed"}
-                transition={{
-                    type: "spring",
-                    stiffness: 360,
-                    damping: 22,
-                    mass: 3.2
-                }}
+                // animate={isAnimate ? "open" : "closed"}
+                // transition={{
+                //     type: "spring",
+                //     stiffness: 360,
+                //     damping: 22,
+                //     mass: 3.2
+                // }}
                 onClick={() => {
                     setIsAnimate((prev) =>
                         !prev);
                 }
 
                 }
-                className={`absolute cursor-pointer bg-black rounded-4xl h-10 w-10 flex flex-col justify-center items-center hover:opacity-85 duration-100 transition-all`}>
+                className={`cursor-pointer relative z-20 bg-black rounded-4xl h-10 w-10 flex flex-col justify-center items-center hover:opacity-85 duration-100 transition-all`}>
                 <span
                     className={`
       absolute  h-0.5 w-5 bg-white rounded-2xl

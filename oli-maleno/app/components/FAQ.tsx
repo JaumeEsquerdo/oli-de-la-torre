@@ -40,7 +40,7 @@ export const FAQ = ({ color = "#000000", textSecondary = "#666666" }) => {
         setPressedTab((prev) => (prev === title ? null : title));
     };
     return (
-        <div className="h-fit w-fit "
+        <div className="h-fit w-full flex flex-col justify-center items-center"
             onMouseLeave={() => setHoveredTab(null)}
         >
             {
@@ -66,7 +66,7 @@ export const FAQ = ({ color = "#000000", textSecondary = "#666666" }) => {
                                 damping: 30
                             }}
                             style={{ backgroundColor: 'white' }}
-                            className={`relative w-100 rounded-4xl flex justify-center items-start cursor-pointer z-20  ${isHovered && " text-white"}  duration-200 transition-colors ${i > 0 ? "-mt-0.5" : ""}`}>
+                            className={`relative w-full max-w-80 md:max-w-100 rounded-4xl flex justify-center items-start cursor-pointer z-20  ${isHovered && " text-white"}  duration-200 transition-colors ${i > 0 ? "-mt-0.5" : ""}`}>
 
 
                             {/* borde q no se oculta con la burbuja del hover */}
