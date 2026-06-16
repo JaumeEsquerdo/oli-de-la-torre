@@ -40,7 +40,7 @@ export const FAQ = ({ color = "#000000", textSecondary = "#666666" }) => {
         setPressedTab((prev) => (prev === title ? null : title));
     };
     return (
-        <div className="h-fit w-full flex flex-col justify-center items-center"
+        <div className="h-fit w-full flex flex-col justify-center items-center md:items-end"
             onMouseLeave={() => setHoveredTab(null)}
         >
             {

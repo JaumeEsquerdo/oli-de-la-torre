@@ -61,7 +61,7 @@ export default function Home() {
         {/* seccion FAQ */}
         <div className="h-fit w-full flex flex-col-reverse gap-8 md:flex-row justify-between px-4 md:p-12">
           <div className="inline-block bg-amber-600 w-full md:w-1/2 h-120 relative rounded-4xl"></div>
-          <div className="flex flex-col justify-between gap-10">
+          <div className="flex flex-col w-full md:w-1/2 justify-between md:items-end gap-10">
             <h2 className="text-2xl text-center md:text-start">preguntas recurrentes</h2>
             <FAQ />
           </div>
