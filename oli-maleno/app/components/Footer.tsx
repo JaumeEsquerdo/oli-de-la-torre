@@ -13,7 +13,7 @@ export const Footer = () => {
                             <motion.div
                                 key={link.title}
                             >
-                                <a href={link.href} className='text-6xl w-fit hover:text-black/60 duration-100 transition-colors'>
+                                <a href={link.href} className='text-4xl md:text-6xl w-fit hover:text-black/60 duration-100 transition-colors'>
                                     {link.title}
                                 </a>
                             </motion.div>
@@ -39,7 +39,7 @@ export const Footer = () => {
                 </div>
             </div>
 
-            <div className='relative flex flex-col gap-8 md:gap-0 md:flex-row justify-between items-end '>
+            <div className='pt-20 md:pt-10 relative flex flex-col gap-8 md:gap-0 md:flex-row justify-between items-center '>
 
                 <div className="flex flex-col items-center">
                     <span className="text-xl">OLI DE LA TORRE</span>

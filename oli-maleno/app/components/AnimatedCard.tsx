@@ -62,8 +62,8 @@ export const AnimatedCard = () => {
                 />
 
                 <motion.div variants={vairantText} initial='initial' whileInView='animate' viewport={{ amount: 0.8 }} className="flex flex-col gap-8 z-20">
-                    <h3 className="text-4xl text-white max-w-200">Compromiso con el medio ambiente. Olivos sin tratar químicamente, con cariño y trato humano, como toda la vida</h3>
-                    <Link href={'/'} className="text-3xl px-8 py-4 bg-white text-black w-fit rounded-2xl">descubre cómo lo hacemos</Link>
+                    <h3 className="text-2xl md:text-4xl text-white max-w-200">Compromiso con el medio ambiente. Olivos sin tratar químicamente, con cariño y trato humano, como toda la vida</h3>
+                    <Link href={'/'} className="text-xl text-center md:text-3xl px-8 py-4 bg-white text-black w-fit rounded-2xl">descubre cómo lo hacemos</Link>
                 </motion.div>
             </motion.div>
             {/* </div> */}
