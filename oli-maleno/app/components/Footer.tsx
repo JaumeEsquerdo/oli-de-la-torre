@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 export const Footer = () => {
     return (
-        <footer className='min-h-[70vh] w-full flex flex-col gap-22 md:gap-20 justify-between px-4 pt-24 pb-16 md:px-12'>
-            <div className='w-full flex flex-col md:flex-row gap-16 md:gap-0 justify-between'>
+        <footer className='min-h-[70vh] w-full flex flex-col gap-22 md:gap-20 justify-between  px-4 pt-24 pb-16 md:px-12'>
+            <div className='w-full flex flex-col md:flex-row gap-16 md:gap-0 justify-between '>
                 {/* navs principales */}
                 <div className='w-full'>
                     <div className='flex flex-col gap-10'>
@@ -39,7 +39,7 @@ export const Footer = () => {
                 </div>
             </div>
 
-            <div className='pt-20 md:pt-10 relative flex flex-col gap-8 md:gap-0 md:flex-row justify-between items-center '>
+            <div className='pt-20 md:pt-10 relative flex flex-col gap-8 md:gap-0 md:flex-row justify-between items-center md:items-end '>
 
                 <div className="flex flex-col items-center">
                     <span className="text-xl">OLI DE LA TORRE</span>
