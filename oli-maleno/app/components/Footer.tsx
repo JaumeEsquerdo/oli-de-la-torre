@@ -13,9 +13,9 @@ export const Footer = () => {
                             <motion.div
                                 key={link.title}
                             >
-                                <a href={link.href} className='text-4xl md:text-6xl w-fit hover:text-black/60 duration-100 transition-colors'>
+                                <Link href={link.href} className='text-4xl md:text-6xl w-fit hover:text-black/60 duration-100 transition-colors'>
                                     {link.title}
-                                </a>
+                                </Link>
                             </motion.div>
                         ))
                         }

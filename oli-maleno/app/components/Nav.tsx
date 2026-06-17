@@ -1,5 +1,6 @@
 import { FooterLinks, Links } from '@/app/data/nav.js'
 import { motion, Variants } from "framer-motion";
+import Link from 'next/link';
 
 const perspective: Variants = {
     initial: {
@@ -62,9 +63,9 @@ export const Nav = () => {
                             initial='initial'
                             exit='exit'
                         >
-                            <a href={link.href} className='text-4xl w-fit hover:text-black/60 duration-100 transition-colors'>
+                            <Link href={link.href} className='text-4xl w-fit hover:text-black/60 duration-100 transition-colors'>
                                 {link.title}
-                            </a>
+                            </Link>
                         </motion.div>
                     </div>
                 ))
@@ -80,9 +81,9 @@ export const Nav = () => {
                     initial='initial'
                     exit='exit'
                 >
-                    <a href={link.href} className='text-xl w-fit hover:text-black/60 duration-100 transition-colors'>
+                    <Link href={link.href} className='text-xl w-fit hover:text-black/60 duration-100 transition-colors'>
                         {link.title}
-                    </a>
+                    </Link>
                 </motion.div>
 
             ))

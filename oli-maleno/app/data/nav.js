@@ -1,7 +1,7 @@
 export const Links = [
-  { title: "Productos", href: "/" },
-  { title: "Beneficios", href: "/" },
-  { title: "Preguntas frequentes", href: "/" },
+  { title: "Productos", href: "#productos" },
+  { title: "Beneficios", href: "#beneficios" },
+  { title: "Preguntas frequentes", href: "#preguntas" },
 ];
 
 export const FooterLinks = [{ title: "Sobre Nosotros", href: "/" }];

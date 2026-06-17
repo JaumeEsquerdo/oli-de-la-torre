@@ -42,7 +42,7 @@ export default function Home() {
         <InfiniteMarquee />
         <div className="h-fit flex flex-col gap-10 px-4 md:px-12 md:py-16">
           <h2 className="text-2xl text-center md:text-start">descubre nuestros productos</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 place-items-center md:place-items-start">
+          <div id="productos" className="scroll-mt-46 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 place-items-center md:place-items-start">
             <Productos />
             <Productos />
             <Productos />
@@ -59,7 +59,7 @@ export default function Home() {
         {/* seccion TARJETA ANIMADA  */}
         <AnimatedCard />
         {/* seccion FAQ */}
-        <div className="h-fit w-full flex flex-col-reverse gap-8 md:flex-row justify-between px-4 md:p-12">
+        <div id="preguntas" className="scroll-mt-46 h-fit w-full flex flex-col-reverse gap-8 md:flex-row justify-between px-4 md:p-12">
           <div className="inline-block bg-amber-600 w-full md:w-1/2 h-120 relative rounded-4xl"></div>
           <div className="flex flex-col w-full md:w-1/2 justify-between md:items-end gap-10">
             <h2 className="text-2xl text-center md:text-start">preguntas recurrentes</h2>

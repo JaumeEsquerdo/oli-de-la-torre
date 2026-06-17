@@ -36,7 +36,7 @@ const variantIcon: Variants = {
 
 export const Benefits = () => {
     return (
-        <div className="flex flex-col items-center px-10 pt-20">
+        <div id='beneficios' className="scroll-mt-46 flex flex-col items-center px-10 pt-20">
             <div className="flex flex-col gap-8 w-[90%] md:w-[50%] [--slide-y:30px] [--slide-x-left:80px] [--slide-x-right:-80px]
             md:[--slide-y:140px] md:[--slide-x-left:800px] md:[--slide-x-right:-800px]">
                 <motion.h2 variants={variantTitleRight} initial='initial' whileInView='animate' viewport={{ once: true, amount: 0.1 }} className="text-4xl sm:text-5xl md:text-7xl text-[#666] text-start w-full">los beneficios del</motion.h2>
