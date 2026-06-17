@@ -4,4 +4,4 @@ export const Links = [
   { title: "Preguntas frequentes", href: "/#preguntas" },
 ];
 
-export const FooterLinks = [{ title: "Sobre Nosotros", href: "/Nosotros" }];
+export const FooterLinks = [{ title: "Sobre Nosotros", href: "/nosotros" }];

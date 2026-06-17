@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { ShoppingCart } from "lucide-react";
 import { Menu } from "@/app/components/Menu";
 import { Footer } from '@/app/components/Footer';
+import { textNosotros } from '@/app/data/nosotros'
 
 
 const Nosotros = () => {
@@ -26,7 +27,18 @@ const Nosotros = () => {
 
                 </header>
                 <main className="flex flex-col gap-16 md:gap-20 flex-1 pt-8 md:pt-20 w-full">
-                    nosotros
+                    <div className="flex flex-col  md:mx-12 md:gap-4 ">
+                        {textNosotros.map((text) => (
+                            <div key={text.id} className='flex flex-col gap-10'>
+                                <h2 className='text-2xl md:text-4xl'>{text.title}</h2>
+                                <div className='flex flex-col gap-6'>
+                                    <p>{text.p1}</p>
+                                    <p>{text.p2}</p>
+                                    <p>{text.p3}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </main>
                 <Footer />
             </div>
