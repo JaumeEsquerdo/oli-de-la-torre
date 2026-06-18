@@ -26,9 +26,24 @@ const Nosotros = () => {
                     </div>
 
                 </header>
-                <main className="flex flex-col gap-16 md:gap-20 flex-1 pt-8 md:pt-20 w-full">
-                    <div className="flex flex-col  md:mx-12 md:gap-4 ">
-                        {textNosotros.map((text) => (
+                <main className="flex flex-col gap-16 md:gap-36 flex-1 pt-8 md:mx-12 md:py-36">
+                    <h1 className='flex flex-col gap-6'><span className='text-8xl text-[#666]'>SOBRE</span> <span className='text-8xl'>NOSOTROS</span></h1>
+                    <div className="flex flex-col md:gap-20 max-w-3/5 mx-auto">
+                        <div className='h-260 bg-amber-300 w-full'></div>
+                        {textNosotros.filter(text => text.id === 1).map((text) => (
+                            <div key={text.id} className='flex flex-col gap-10'>
+                                <h2 className='text-2xl md:text-4xl'>{text.title}</h2>
+                                <div className='flex flex-col gap-6'>
+                                    <p>{text.p1}</p>
+                                    <p>{text.p2}</p>
+                                    <p>{text.p3}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="flex flex-col md:gap-20 max-w-3/5 mx-auto">
+                        <div className='h-140 bg-amber-600 w-full'></div>
+                        {textNosotros.filter(text => text.id === 2).map((text) => (
                             <div key={text.id} className='flex flex-col gap-10'>
                                 <h2 className='text-2xl md:text-4xl'>{text.title}</h2>
                                 <div className='flex flex-col gap-6'>
