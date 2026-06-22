@@ -4,6 +4,23 @@ import { Footer } from '@/app/components/Footer';
 import { textNosotros } from '@/app/data/nosotros'
 import { Header } from '@/app/components/Header';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { Variants } from 'framer-motion';
+
+
+const vairantText: Variants = {
+    initial: { opacity: 0, y: 20 },
+    animate: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            delay: 0.2,
+            duration: .8,
+            ease: 'easeOut'
+        }
+    }
+}
+
 
 
 const Nosotros = () => {
@@ -17,7 +34,7 @@ const Nosotros = () => {
                     <div className="flex flex-col md:gap-20 max-w-3/5 mx-auto items-center">
                         <div className='h-260 bg-amber-800 w-full relative rounded-4xl fill-neutral-900'>
                             {/* <Image src="" alt="" fill sizes='' /> */}
-                            <h2 className='absolute top-2/5 left-1/2 -translate-x-1/2 text-5xl w-[80%] text-white'>Más de 30 años cuidando nuestros olivos y manteniendo viva nuestra tradición familiar</h2>
+                            <motion.h2 variants={vairantText} initial='initial' whileInView='animate' viewport={{ amount: 0.9 }} className='absolute top-2/5 left-1/2 -translate-x-1/2 text-5xl w-[80%] text-white'>Más de 30 años cuidando nuestros olivos y manteniendo viva nuestra tradición familiar</motion.h2>
                         </div>
                         {textNosotros.filter(text => text.id === 1).map((text) => (
                             <div key={text.id} className='flex flex-col gap-10 w-[90%]'>
