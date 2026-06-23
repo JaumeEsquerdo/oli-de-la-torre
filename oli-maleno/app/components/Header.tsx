@@ -12,7 +12,7 @@ export const Header = () => {
             </div>
 
             <div className="flex w-fit  justify-end items-center gap-6 md:gap-12">
-                <motion.div layout style={{ display: "flex", alignItems: "center", width: 'full' }}>
+                <motion.div layout style={{ display: "flex", alignItems: "center", width: 'full' }} className='rounded-full bg-gray-200 p-2 cursor-pointer hover:bg-gray-300 transition-colors duration-75'>
                     <ShoppingCart size={25} strokeWidth={2} />
                 </motion.div>
                 <Menu />
