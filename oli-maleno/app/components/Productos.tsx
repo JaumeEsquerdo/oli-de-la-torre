@@ -10,7 +10,7 @@ interface Producto {
 export const Productos = () => {
 
     const misProductos: Producto[] = [
-        { id: 'camisa-azul', nombre: 'Camisa Azul', precio: '29€' },
+        { id: 'botella-5l', nombre: 'Botella de aceite de oliva virgen extra', precio: '29€' },
         { id: 'pantalon-negro', nombre: 'Pantalón Negro', precio: '49€' }
     ];
 
