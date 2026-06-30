@@ -1,3 +1,4 @@
+'use client'
 import { FooterLinks, Links } from '@/app/data/nav.js'
 import { motion } from 'framer-motion';
 import Link from 'next/link';

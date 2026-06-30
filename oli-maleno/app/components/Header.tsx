@@ -1,3 +1,4 @@
+'use client'
 import { motion } from 'framer-motion'
 import { ShoppingCart } from "lucide-react";
 import { Menu } from "@/app/components/Menu";
