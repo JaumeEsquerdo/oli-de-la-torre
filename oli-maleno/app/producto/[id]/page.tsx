@@ -1,6 +1,7 @@
 
 import { Footer } from "@/app/components/Footer";
 import { Header } from "@/app/components/Header";
+import SelectorCantidadPrecio from "@/app/components/SelectorCantidadPrecio";
 import Image from "next/image";
 
 interface Logo {
@@ -10,6 +11,7 @@ interface Logo {
 }
 
 interface Producto {
+    id: string;
     titulo: string;
     subtitulo: string;
     precio: string;
@@ -27,8 +29,8 @@ async function obtenerDetalleProducto(id: string): Promise<Producto | null> {
     // return res.json()
 
     const baseDeDatos: Record<string, Producto> = {
-        'botella-5l': { titulo: 'Botella de aceite de oliva virgen extra', subtitulo: '5l', precio: '29€', logos: [{ nombre: 'logo', src: '', alt: ' ' }] },
-        'pantalon-negro': { titulo: 'Pantalón Negro Slim', subtitulo: '5l', precio: '49€', logos: [{ nombre: 'logo', src: '', alt: ' ' }] },
+        'botella-5l': { id: '1', titulo: 'Botella de aceite de oliva virgen extra', subtitulo: '5l', precio: '29€', logos: [{ nombre: 'logo', src: '', alt: ' ' }] },
+        'pantalon-negro': { id: '2', titulo: 'Pantalón Negro Slim', subtitulo: '5l', precio: '49€', logos: [{ nombre: 'logo', src: '', alt: ' ' }] },
     };
 
     return baseDeDatos[id] || null;
@@ -65,16 +67,14 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
                             logos
                         </div>
 
-                        <span>cantidad:</span>
-
-                        <button className="mt-6 w-full bg-white text-2xl text-green-900 py-3 rounded-2xl font-medium max-w-md">
-                            Añadir al carrito
-                        </button>
+                        <div>
+                            <SelectorCantidadPrecio producto={producto} />
+                        </div>
                     </div>
 
                     {/* section right */}
                     <div className="h-200 w-full bg-amber-400 rounded-4xl">
-                        <Image sizes="" fill src={''} alt="" />
+                        {/* <Image sizes="" fill src={''} alt="" /> */}
                     </div>
                 </div>
             </div>
