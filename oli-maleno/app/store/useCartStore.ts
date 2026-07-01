@@ -17,6 +17,8 @@ interface CartState {
   clearCart: () => void;
 }
 
+// NOTA MENTAL: Todo este objeto que definimos abajo (items, addToCart, clearCart)
+// es lo que Zustand agrupa internamente bajo el nombre de 'state'.
 export const useCartStore = create<CartState>()(
   // El middleware 'persist' guarda el carrito en localStorage automáticamente
   persist(
@@ -24,6 +26,7 @@ export const useCartStore = create<CartState>()(
       items: [],
 
       addToCart: (producto, cantidad) =>
+        // Aquí Zustand nos pasa ese 'state' global para poder leer 'state.items'
         set((state) => {
           // Comprobamos si el producto ya existe en el carrito usando su ID
           const itemExiste = state.items.find(
