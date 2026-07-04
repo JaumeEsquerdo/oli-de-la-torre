@@ -21,17 +21,6 @@ const variants: Variants = {
     }
 }
 
-// const buttonVariants = {
-//     open: {
-//         x: -20,
-//         y: -24,
-//     },
-//     closed: {
-//         x: 0,
-//         y: -40,
-//     },
-// };
-
 export const Menu = () => {
     // const [isOpen, setIsOpen] = useState(false)
     const [isAnimate, setIsAnimate] = useState(false)

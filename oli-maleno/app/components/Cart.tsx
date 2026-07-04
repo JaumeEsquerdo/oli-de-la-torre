@@ -41,7 +41,7 @@ export const Cart = ({ close }: Close) => {
                                     </div>
                                     <div className="text-right">
                                         {/* cantidad y precio */}
-                                        <p className="text-sm font-medium text-gray-700">{item.cantidad} x {item.precio}</p>
+                                        <p className="text-sm font-medium text-gray-700">{item.cantidad} ud. x {item.precio}</p>
                                         <p className="text-sm font-bold text-green-700">
                                             {(item.precioNumerico * item.cantidad).toFixed(2)}€
                                         </p>

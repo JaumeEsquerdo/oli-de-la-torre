@@ -5,6 +5,7 @@ import { Menu } from "@/app/components/Menu";
 import { useState } from 'react';
 import { Cart } from './Cart';
 import { AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 
 export const Header = () => {
     const [cartOpen, setCartOpen] = useState(false)
@@ -14,11 +15,11 @@ export const Header = () => {
     }
     return (
         <header className="flex justify-between pt-20 md:pt-10 px-8 md:pl-12 md:pr-28 w-full relative items-center">
-            <div className="flex flex-col justify-center items-center">
+            <Link href={'/'} className="flex flex-col justify-center items-center">
                 <span className="text-xl">OLI DE LA TORRE</span>
                 <span className="font-light">X</span>
                 <span className="text-xl">OLI MALENO</span>
-            </div>
+            </Link>
 
             <div className="flex w-fit  justify-end items-center gap-6 md:gap-12">
 

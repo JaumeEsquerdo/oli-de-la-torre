@@ -6,7 +6,7 @@ import { useCartStore } from '@/app/store/useCartStore'
 interface Logo {
     src: string;
     alt: string;
-    nombre?: string; // Por si quieres poner un texto abajo del logo
+    nombre?: string;
 }
 
 interface Producto {
