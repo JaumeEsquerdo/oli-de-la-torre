@@ -17,7 +17,7 @@ const perspective: Variants = {
         transition: {
             duration: 0.75,
             delay: 0.5 + i * 0.14,
-            opacity: { duration: 0.55, delay: 0.5 + i * 0.14, },
+            opacity: { duration: 0.55, delay: 0.7 + i * 0.14, },
             ease: [.251, .61, .355, 1]
         }
     }),
@@ -37,8 +37,8 @@ const footerVariants: Variants = {
         opacity: 1,
         translateY: 0,
         transition: {
-            duration: 0.65,
-            delay: 0.6,
+            duration: 1.2,
+            delay: 1.2,
             ease: [.251, .61, .355, 1]
         }
     },
@@ -55,7 +55,7 @@ export const Nav = () => {
         <div className='flex flex-col justify-between px-8 pt-12 pb-14 h-full'>
             <div className='flex flex-col gap-6'>
                 {Links.map((link, i) => (
-                    <div key={link.title} className='perspective-dramatic perspective-origin-bottom'>
+                    <div key={link.title} className='perspective-dramatic perspective-origin-top-right'>
                         <motion.div
                             variants={perspective}
                             custom={i}
