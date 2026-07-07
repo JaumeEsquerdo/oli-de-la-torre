@@ -2,6 +2,8 @@
 import { Footer } from "@/app/components/Footer";
 import { Header } from "@/app/components/Header";
 import SelectorCantidadPrecio from "@/app/components/SelectorCantidadPrecio";
+import { ul } from "framer-motion/client";
+import { Leaf, Heart, Container, GlassWater, LucideIcon } from 'lucide-react';
 import Image from "next/image";
 
 interface Logo {
@@ -22,6 +24,14 @@ interface PaginaProps {
     params: Promise<{ id: string }>;
 }
 
+
+const misIconos: Record<string, LucideIcon> = {
+    Leaf: Leaf,
+    Heart: Heart,
+    Container: Container,
+    GlassWater: GlassWater
+};
+
 // 1. función para simular que buscas los datos de ese producto específico
 async function obtenerDetalleProducto(id: string): Promise<Producto | null> {
     // simulación:
@@ -29,8 +39,20 @@ async function obtenerDetalleProducto(id: string): Promise<Producto | null> {
     // return res.json()
 
     const baseDeDatos: Record<string, Producto> = {
-        'botella-5l': { id: '1', titulo: 'Botella de aceite de oliva virgen extra', subtitulo: '5l', precio: '29€', logos: [{ nombre: 'logo', src: '', alt: ' ' }] },
-        'pantalon-negro': { id: '2', titulo: 'Pantalón Negro Slim', subtitulo: '5l', precio: '49€', logos: [{ nombre: 'logo', src: '', alt: ' ' }] },
+        'botella-5l': {
+            id: '1', titulo: 'Botella grande de aceite de oliva virgen', subtitulo: '5l', precio: '29€', logos: [
+                { nombre: 'Leaf', src: '', alt: '100% Natural de Olivar' },      // Propiedad: Natural
+                { nombre: 'Heart', src: '', alt: 'Saludable / Cardio' },        // Propiedad: Salud
+                { nombre: 'Container', src: '', alt: 'Formato Familiar 5L' }    // Formato: Grande
+            ]
+        },
+        'botella-2l': {
+            id: '2', titulo: 'Botella mediana de aceite de oliva virgen', subtitulo: '2l', precio: '49€', logos: [
+                { nombre: 'Leaf', src: '', alt: '100% Natural de Olivar' },      // Propiedad: Natural (Igual)
+                { nombre: 'Heart', src: '', alt: 'Saludable / Cardio' },        // Propiedad: Salud (Igual)
+                { nombre: 'GlassWater', src: '', alt: 'Formato Estándar 2L' }        // Formato: Mediano (Cambia)
+            ]
+        },
     };
 
     return baseDeDatos[id] || null;
@@ -64,7 +86,27 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
                         <span className="text-xl text-green-600 font-semibold">{producto.precio}</span>
 
                         <div className="flex gap-8">
-                            logos
+
+                            {/* iconos beneficios producto */}
+                            <ul>
+                                {producto.logos.map((logo, i) => {
+
+                                    const IconoComponente = logo.nombre ? misIconos[logo.nombre] : null;
+
+                                    return (
+
+                                        <li key={i} className="flex items-center gap-2" title={logo.alt}>
+
+                                            {IconoComponente ? (
+                                                <IconoComponente className="w-6 h-6 text-emerald-600" />
+                                            ) : (
+                                                <span>Icono no encontrado</span>
+                                            )}
+
+                                            <span className="text-sm text-gray-600">{logo.alt}</span>
+                                        </li>)
+                                })}
+                            </ul>
                         </div>
 
                         <div>
@@ -77,7 +119,7 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
                         {/* <Image sizes="" fill src={''} alt="" /> */}
                     </div>
                 </div>
-            </div>
+            </div >
             <Footer />
         </>
     );
