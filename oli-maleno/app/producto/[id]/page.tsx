@@ -5,6 +5,8 @@ import SelectorCantidadPrecio from "@/app/components/SelectorCantidadPrecio";
 import Link from "next/link";
 import { Leaf, Heart, Container, GlassWater, LucideIcon } from 'lucide-react';
 import Image from "next/image";
+import { FAQ } from "@/app/components/FAQ";
+import InfiniteMarquee from "@/app/components/InfiniteMarquee";
 
 interface Logo {
     src: string;
@@ -48,6 +50,13 @@ const baseDeDatos: Record<string, Producto> = {
         ]
     },
 };
+
+const caracteristicasProductos = [
+    { title: 'Formato Familiar', color: '#000' },
+    { title: 'Garrafa 5 Litros', color: '#333' },
+    { title: 'Botella 2 Litros', color: '#333' },
+    { title: 'Ideal para Cocinar', color: '#ebc034' }
+];
 
 //  Función para buscar el producto por su ID (la ruta ej: 'botella-5l')
 async function obtenerDetalleProducto(id: string): Promise<Producto | null> {
@@ -145,13 +154,29 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
                                 </div>
                             </div>
                         )}
+
+                        <div>
+                            <div className="h-100">
+
+                                texto desrciptivo embalaje
+                            </div>
+
+                            {/* faqs */}
+                            <div className="w-100">
+
+                                <FAQ />
+                            </div>
+                        </div>
                     </div>
 
                     {/* section right */}
-                    <div className="h-200 w-full bg-amber-400 rounded-4xl">
+                    <div className="sticky top-12 h-200 w-full bg-amber-400 rounded-4xl">
                         {/* <Image sizes="" fill src={''} alt="" /> */}
                     </div>
                 </div>
+
+                {/* fuera de la estructura de producto */}
+                <InfiniteMarquee textosNuevos={caracteristicasProductos} />
             </div >
             <Footer />
         </>

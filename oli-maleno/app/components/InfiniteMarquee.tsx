@@ -1,7 +1,61 @@
+'use client'
 import { motion, useScroll, useTransform, useAnimationFrame, useMotionValue } from "framer-motion";
 import { useRef } from "react";
 
-export default function InfiniteMarquee() {
+
+interface TextoMarquee {
+  title: string;
+  color: string;
+
+}
+
+interface InfiniteMarqueeProps {
+  // "?" porque en algunas páginas no se les pasa nada y usan el por defecto
+  textosNuevos?: TextoMarquee[];
+}
+
+// El texto por defecto
+const TEXTOS_POR_DEFECTO: TextoMarquee[] = [
+  {
+    title: 'aceite oliva virgen',
+    color: '#000'
+  },
+  {
+    title: 'ecológico',
+    color: '#666'
+  },
+  {
+    title: 'producción casera',
+    color: '#000'
+  },
+  {
+    title: 'cooperativa',
+    color: '#666'
+  },
+  {
+    title: 'Alicante',
+    color: '#000'
+  },
+  {
+    title: 'compromiso medio ambiental',
+    color: '#666'
+  },
+  {
+    title: 'pueblo',
+    color: '#000'
+  },
+  {
+    title: 'Torremanzanas',
+    color: '#666'
+  },
+]
+
+export default function InfiniteMarquee({ textosNuevos }: InfiniteMarqueeProps) {
+
+  // Si 'textosNuevos' existe y tiene elementos, usa esos. Si no, usa los de por defecto
+  const textosAFiltrar = textosNuevos && textosNuevos.length > 0
+    ? textosNuevos
+    : TEXTOS_POR_DEFECTO;
 
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -35,42 +89,7 @@ export default function InfiniteMarquee() {
     baseX.set(newX);
   });
 
-  // El texto que quieres que se repita
-  const textInfinite = [
-    {
-      title: 'aceite oliva virgen',
-      color: '#000'
-    },
-    {
-      title: 'ecológico',
-      color: '#666'
-    },
-    {
-      title: 'producción casera',
-      color: '#000'
-    },
-    {
-      title: 'cooperativa',
-      color: '#666'
-    },
-    {
-      title: 'Alicante',
-      color: '#000'
-    },
-    {
-      title: 'compromiso medio ambiental',
-      color: '#666'
-    },
-    {
-      title: 'pueblo',
-      color: '#000'
-    },
-    {
-      title: 'Torremanzanas',
-      color: '#666'
-    },
 
-  ]
 
   return (
     <div
@@ -85,7 +104,7 @@ export default function InfiniteMarquee() {
         <div className="flex gap-6">
           {/* Renderizamos el texto varias veces para asegurar que llene la pantalla y tape los huecos */}
           {
-            textInfinite.map((text, i) => (
+            textosAFiltrar.map((text, i) => (
               <span key={i} className={`text-6xl font-bold`} style={{ color: text.color }}>{text.title}</span>
 
             ))
@@ -94,7 +113,7 @@ export default function InfiniteMarquee() {
         {/* BLOQUE 2: Duplicado (Escondido para accesibilidad con aria-hidden) */}
         <div className="flex gap-6" aria-hidden="true">
           {
-            textInfinite.map((text, i) => (
+            textosAFiltrar.map((text, i) => (
               <span key={i} className={`text-6xl font-bold`} style={{ color: text.color }}>{text.title}</span>
 
             ))
