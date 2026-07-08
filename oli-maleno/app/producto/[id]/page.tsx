@@ -2,7 +2,7 @@
 import { Footer } from "@/app/components/Footer";
 import { Header } from "@/app/components/Header";
 import SelectorCantidadPrecio from "@/app/components/SelectorCantidadPrecio";
-import { ul } from "framer-motion/client";
+import Link from "next/link";
 import { Leaf, Heart, Container, GlassWater, LucideIcon } from 'lucide-react';
 import Image from "next/image";
 
@@ -32,44 +32,48 @@ const misIconos: Record<string, LucideIcon> = {
     GlassWater: GlassWater
 };
 
-// 1. función para simular que buscas los datos de ese producto específico
+const baseDeDatos: Record<string, Producto> = {
+    'botella-5l': {
+        id: '1', titulo: 'Botella grande de aceite de oliva virgen', subtitulo: '5l', precio: '29€', logos: [
+            { nombre: 'Leaf', src: '', alt: '100% Natural de Olivar' },      // Propiedad: Natural
+            { nombre: 'Heart', src: '', alt: 'Saludable / Cardio' },        // Propiedad: Salud
+            { nombre: 'Container', src: '', alt: 'Formato Familiar 5L' }    // Formato: Grande
+        ]
+    },
+    'botella-2l': {
+        id: '2', titulo: 'Botella mediana de aceite de oliva virgen', subtitulo: '2l', precio: '49€', logos: [
+            { nombre: 'Leaf', src: '', alt: '100% Natural de Olivar' },      // Propiedad: Natural (Igual)
+            { nombre: 'Heart', src: '', alt: 'Saludable / Cardio' },        // Propiedad: Salud (Igual)
+            { nombre: 'GlassWater', src: '', alt: 'Formato Estándar 2L' }        // Formato: Mediano (Cambia)
+        ]
+    },
+};
+
+//  Función para buscar el producto por su ID (la ruta ej: 'botella-5l')
 async function obtenerDetalleProducto(id: string): Promise<Producto | null> {
-    // simulación:
-    // const res = await fetch(`https://api.ejemplo.com/productos/${id}`)
-    // return res.json()
-
-    const baseDeDatos: Record<string, Producto> = {
-        'botella-5l': {
-            id: '1', titulo: 'Botella grande de aceite de oliva virgen', subtitulo: '5l', precio: '29€', logos: [
-                { nombre: 'Leaf', src: '', alt: '100% Natural de Olivar' },      // Propiedad: Natural
-                { nombre: 'Heart', src: '', alt: 'Saludable / Cardio' },        // Propiedad: Salud
-                { nombre: 'Container', src: '', alt: 'Formato Familiar 5L' }    // Formato: Grande
-            ]
-        },
-        'botella-2l': {
-            id: '2', titulo: 'Botella mediana de aceite de oliva virgen', subtitulo: '2l', precio: '49€', logos: [
-                { nombre: 'Leaf', src: '', alt: '100% Natural de Olivar' },      // Propiedad: Natural (Igual)
-                { nombre: 'Heart', src: '', alt: 'Saludable / Cardio' },        // Propiedad: Salud (Igual)
-                { nombre: 'GlassWater', src: '', alt: 'Formato Estándar 2L' }        // Formato: Mediano (Cambia)
-            ]
-        },
-    };
-
     return baseDeDatos[id] || null;
 }
 
-// 2. El componente de la página
+//  Función para traer los recomendados mapeando las llaves del objeto
+async function obtenerProductosRecomendados(urlActual: string) {
+    // Convertimos el objeto en un array de parejas [slug, producto] y filtramos el actual
+    return Object.entries(baseDeDatos)
+        .filter(([slug]) => slug !== urlActual)
+        .map(([slug, producto]) => ({ ...producto, slug })); // Le inyectamos el slug para el Link
+}
+
+//  El componente de la página
 export default async function DetalleProductoPage({ params }: PaginaProps) {
-    // Desestructuramos el "id" que viene directamente de la URL
     const { id } = await params;
 
-    // Buscamos los datos de ese producto concreto
+    // Buscamos el producto actual y sus recomendados
     const producto = await obtenerDetalleProducto(id);
+    const recomendados = await obtenerProductosRecomendados(id);
 
-    // Si el usuario escribe una URL que no existe
     if (!producto) {
         return <div className="p-8 font-bold">Lo sentimos, ese producto no existe.</div>;
     }
+
 
     // Si existe la búsqueda
     return (
@@ -112,6 +116,35 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
                         <div>
                             <SelectorCantidadPrecio producto={producto} />
                         </div>
+
+                        {/* ================= SECCIÓN MINI SLIDE DE RECOMENDADOS ================= */}
+                        {recomendados.length > 0 && (
+                            <div className="w-full px-8 md:px-12 pb-16">
+                                <h3 className="text-2xl font-bold text-green-900 mb-6">Otros productos recomendados</h3>
+
+                                {/* Contenedor con scroll horizontal nativo y suave */}
+                                <div className="flex gap-6 overflow-x-auto pb-4 snap-x">
+                                    {recomendados.map((item) => (
+                                        <Link
+                                            href={`/producto/${item.slug}`} // Modifica "/tu-ruta-de-productos/" por como tengas tus carpetas
+                                            key={item.id}
+                                            className="min-w-[260px] md:min-w-[300px] bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-all snap-start flex flex-col justify-between"
+                                        >
+                                            <div className="w-full h-40 bg-gray-200 rounded-xl mb-3 flex items-center justify-center text-gray-400">
+                                                <span>[Imagen {item.subtitulo}]</span>
+                                            </div>
+                                            <div>
+                                                <h4 className="font-bold text-green-900 text-md truncate">{item.titulo}</h4>
+                                                <div className="flex justify-between items-center mt-2">
+                                                    <span className="text-xs text-gray-500">Tamaño: {item.subtitulo}</span>
+                                                    <span className="font-bold text-emerald-600">{item.precio}</span>
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
                     </div>
 
                     {/* section right */}
