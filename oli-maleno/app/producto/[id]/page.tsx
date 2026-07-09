@@ -3,10 +3,12 @@ import { Footer } from "@/app/components/Footer";
 import { Header } from "@/app/components/Header";
 import SelectorCantidadPrecio from "@/app/components/SelectorCantidadPrecio";
 import Link from "next/link";
-import { Leaf, Heart, Container, GlassWater, LucideIcon } from 'lucide-react';
+import { Leaf, Heart, Container, GlassWater, LucideIcon, ArrowUpRight } from 'lucide-react';
 import Image from "next/image";
 import { FAQ } from "@/app/components/FAQ";
 import InfiniteMarquee from "@/app/components/InfiniteMarquee";
+import { NavigationBanners } from "@/app/components/NavigationBanners";
+
 
 interface Logo {
     src: string;
@@ -177,8 +179,12 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
 
                 {/* fuera de la estructura de producto */}
                 <InfiniteMarquee textosNuevos={caracteristicasProductos} />
+
+                <NavigationBanners />
             </div >
             <Footer />
         </>
     );
 }
+
+
