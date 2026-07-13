@@ -93,7 +93,7 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
                 <Header />
                 <div className="w-full py-12 px-8 md:py-26 md:px-12 flex gap-20 justify-between">
                     {/* section left */}
-                    <div className="flex flex-col w-full items-center">
+                    <div className="flex flex-col w-full items-center gap-8">
                         <div className="flex flex-col gap-2 justify-center items-center max-w-xl">
                             <h1 className="text-4xl font-extrabold mb-4 text-textColor text-center">{producto.titulo}</h1>
                             <h2 className="text-4xl font-extrabold mb-4 text-textColor">{producto.subtitulo}</h2>
@@ -101,7 +101,7 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
                         <div className="flex gap-8">
 
                             {/* iconos beneficios producto */}
-                            <ul>
+                            <ul className="flex flex-col gap-4">
                                 {producto.logos.map((logo, i) => {
 
                                     const IconoComponente = logo.nombre ? misIconos[logo.nombre] : null;
@@ -123,7 +123,7 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
                         </div>
 
                         {/* Muestra el precio unitario original */}
-                        <div className="flex justify-between items-center">
+                        <div className="flex justify-between items-center gap-2">
                             <span className="text-xl text-textColor font-semibold">Precio por unidad:</span>
                             <span className="text-xl font-bold text-textColor">{producto.precio}</span>
                         </div>
