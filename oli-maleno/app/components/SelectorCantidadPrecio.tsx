@@ -90,9 +90,9 @@ export default function SelectorCantidadPrecio({ producto }: SelectorCantidadPre
             <button
                 type="button"
                 onClick={añadirAlCarrito}
-                className="w-full bg-white hover:bg-white/80 text-textColor font-bold py-3 px-6 rounded-4xl transition-all shadow-md active:scale-[0.98] cursor-pointer"
+                className="w-full bg-white hover:bg-white/80 text-textColor font-bold py-3 px-6 text-2xl rounded-4xl transition-all shadow-md active:scale-[0.98] cursor-pointer"
             >
-                Añadir al carrito
+                añadir al carrito
             </button>
         </div>
     );

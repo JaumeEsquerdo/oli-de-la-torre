@@ -134,8 +134,8 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
 
                         {/* ================= SECCIÓN MINI SLIDE DE RECOMENDADOS ================= */}
                         {recomendados.length > 0 && (
-                            <div className="w-full px-8 md:px-12 pb-16">
-                                <h3 className="text-2xl font-bold text-textColorb-6">Otros productos recomendados</h3>
+                            <div className="w-full px-8 md:px-12 py-16 flex flex-col gap-6">
+                                <h3 className="text-2xl font-bold text-textColorb-6">Otros productos que te recomendados</h3>
 
                                 {/* Contenedor con scroll horizontal nativo y suave */}
                                 <div className="flex gap-6 overflow-x-auto pb-4 snap-x">
@@ -143,13 +143,13 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
                                         <Link
                                             href={`/producto/${item.slug}`} // Modifica "/tu-ruta-de-productos/" por como tengas tus carpetas
                                             key={item.id}
-                                            className="min-w-[260px] md:min-w-[300px] bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-all snap-start flex flex-col justify-between"
+                                            className="w-[160px] md:w-[260px]  bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-all snap-start flex flex-col justify-between"
                                         >
                                             <div className="w-full h-40 bg-gray-200 rounded-xl mb-3 flex items-center justify-center text-gray-400">
                                                 <span>[Imagen {item.subtitulo}]</span>
                                             </div>
                                             <div>
-                                                <h4 className="font-bold text-textColor text-md truncate">{item.titulo}</h4>
+                                                <h4 className="font-bold text-textColor text-md">{item.titulo}</h4>
                                                 <div className="flex justify-between items-center mt-2">
                                                     <span className="text-xs text-gray-500">Tamaño: {item.subtitulo}</span>
                                                     <span className="font-bold text-textColor">{item.precio}</span>
