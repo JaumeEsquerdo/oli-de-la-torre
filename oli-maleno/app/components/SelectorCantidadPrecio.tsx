@@ -52,22 +52,16 @@ export default function SelectorCantidadPrecio({ producto }: SelectorCantidadPre
 
     return (
         <div className="space-y-6">
-            {/* Muestra el precio unitario original */}
-            <div className="flex justify-between items-center">
-                <span className="text-gray-600 font-medium">Precio por unidad:</span>
-                <span className="text-xl font-bold text-gray-900">{producto.precio}</span>
-            </div>
 
-            <hr className="border-gray-200" />
 
             {/* Selector de cantidad */}
             <div className="flex justify-between items-center">
                 <span className="text-gray-600 font-medium">Cantidad:</span>
-                <div className="flex items-center border border-gray-300 rounded-lg bg-white overflow-hidden shadow-sm">
+                <div className="flex items-center overflow-hidden">
                     <button
                         type="button"
                         onClick={decrementar}
-                        className="px-4 py-2 hover:bg-gray-100 text-gray-700 font-bold transition-colors"
+                        className="px-4 py-2 bg-white hover:bg-white/80 rounded-4xl text-gray-700 font-bold transition-colors cursor-pointer"
                     >
                         -
                     </button>
@@ -77,24 +71,26 @@ export default function SelectorCantidadPrecio({ producto }: SelectorCantidadPre
                     <button
                         type="button"
                         onClick={incrementar}
-                        className="px-4 py-2 hover:bg-gray-100 text-gray-700 font-bold transition-colors"
+                        className="px-4 py-2 bg-white hover:bg-white/80 rounded-4xl text-gray-700 font-bold transition-colors cursor-pointer"
                     >
                         +
                     </button>
                 </div>
             </div>
 
+
+
             {/* Precio Total acumulado dinámicamente */}
-            <div className="flex justify-between items-center p-4 bg-green-50 rounded-xl border border-green-100">
-                <span className="font-bold text-green-800 text-base">Total estimado:</span>
-                <span className="text-3xl font-black text-green-700">{precioTotal}€</span>
+            <div className="flex justify-between items-center p-4 min-w-[320px] bg-green-50 rounded-xl border border-green-100">
+                <span className="font-bold text-textColor text-base">Total estimado:</span>
+                <span className="text-3xl font-black text-textColor">{precioTotal}€</span>
             </div>
 
             {/* Botón de compra */}
             <button
                 type="button"
                 onClick={añadirAlCarrito}
-                className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-md active:scale-[0.98]"
+                className="w-full bg-white hover:bg-white/80 text-textColor font-bold py-3 px-6 rounded-4xl transition-all shadow-md active:scale-[0.98] cursor-pointer"
             >
                 Añadir al carrito
             </button>

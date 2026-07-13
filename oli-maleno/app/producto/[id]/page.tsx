@@ -98,8 +98,6 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
                             <h1 className="text-4xl font-extrabold mb-4 text-textColor text-center">{producto.titulo}</h1>
                             <h2 className="text-4xl font-extrabold mb-4 text-textColor">{producto.subtitulo}</h2>
                         </div>
-                        <span className="text-xl text-textColor font-semibold">{producto.precio}</span>
-
                         <div className="flex gap-8">
 
                             {/* iconos beneficios producto */}
@@ -113,7 +111,7 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
                                         <li key={i} className="flex items-center gap-2" title={logo.alt}>
 
                                             {IconoComponente ? (
-                                                <IconoComponente className="w-6 h-6 text-emerald-600" />
+                                                <IconoComponente className="w-6 h-6 text-textColor" />
                                             ) : (
                                                 <span>Icono no encontrado</span>
                                             )}
@@ -124,6 +122,12 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
                             </ul>
                         </div>
 
+                        {/* Muestra el precio unitario original */}
+                        <div className="flex justify-between items-center">
+                            <span className="text-xl text-textColor font-semibold">Precio por unidad:</span>
+                            <span className="text-xl font-bold text-textColor">{producto.precio}</span>
+                        </div>
+
                         <div>
                             <SelectorCantidadPrecio producto={producto} />
                         </div>
@@ -131,7 +135,7 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
                         {/* ================= SECCIÓN MINI SLIDE DE RECOMENDADOS ================= */}
                         {recomendados.length > 0 && (
                             <div className="w-full px-8 md:px-12 pb-16">
-                                <h3 className="text-2xl font-bold text-green-900 mb-6">Otros productos recomendados</h3>
+                                <h3 className="text-2xl font-bold text-textColorb-6">Otros productos recomendados</h3>
 
                                 {/* Contenedor con scroll horizontal nativo y suave */}
                                 <div className="flex gap-6 overflow-x-auto pb-4 snap-x">
@@ -145,10 +149,10 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
                                                 <span>[Imagen {item.subtitulo}]</span>
                                             </div>
                                             <div>
-                                                <h4 className="font-bold text-green-900 text-md truncate">{item.titulo}</h4>
+                                                <h4 className="font-bold text-textColor text-md truncate">{item.titulo}</h4>
                                                 <div className="flex justify-between items-center mt-2">
                                                     <span className="text-xs text-gray-500">Tamaño: {item.subtitulo}</span>
-                                                    <span className="font-bold text-emerald-600">{item.precio}</span>
+                                                    <span className="font-bold text-textColor">{item.precio}</span>
                                                 </div>
                                             </div>
                                         </Link>
