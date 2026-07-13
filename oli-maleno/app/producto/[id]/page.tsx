@@ -89,16 +89,16 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
     // Si existe la búsqueda
     return (
         <>
-            <div className="bg-green-100 w-full h-full">
+            <div className="bg-[#E1EFE3] w-full h-full">
                 <Header />
                 <div className="w-full py-12 px-8 md:py-26 md:px-12 flex gap-20 justify-between">
                     {/* section left */}
                     <div className="flex flex-col w-full items-center">
                         <div className="flex flex-col gap-2 justify-center items-center max-w-xl">
-                            <h1 className="text-4xl font-extrabold mb-4 text-green-900 text-center">{producto.titulo}</h1>
-                            <h2 className="text-4xl font-extrabold mb-4 text-green-900">{producto.subtitulo}</h2>
+                            <h1 className="text-4xl font-extrabold mb-4 text-textColor text-center">{producto.titulo}</h1>
+                            <h2 className="text-4xl font-extrabold mb-4 text-textColor">{producto.subtitulo}</h2>
                         </div>
-                        <span className="text-xl text-green-600 font-semibold">{producto.precio}</span>
+                        <span className="text-xl text-textColor font-semibold">{producto.precio}</span>
 
                         <div className="flex gap-8">
 
