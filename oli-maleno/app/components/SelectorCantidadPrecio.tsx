@@ -61,7 +61,8 @@ export default function SelectorCantidadPrecio({ producto }: SelectorCantidadPre
                     <button
                         type="button"
                         onClick={decrementar}
-                        className="px-4 py-2 bg-white hover:bg-white/80 rounded-4xl text-gray-700 font-bold transition-colors cursor-pointer"
+                        disabled={cantidad === 1}
+                        className={`px-4 py-2 bg-white hover:bg-white/80 rounded-4xl text-gray-700 font-bold transition-colors cursor-pointer disabled:bg-white/40 disabled:pointer-events-none`}
                     >
                         -
                     </button>
