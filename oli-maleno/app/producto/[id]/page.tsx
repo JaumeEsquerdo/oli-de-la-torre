@@ -51,6 +51,27 @@ const baseDeDatos: Record<string, Producto> = {
             { nombre: 'GlassWater', src: '', alt: 'Formato Estándar 2L' }        // Formato: Mediano (Cambia)
         ]
     },
+    'botella-1l': {
+        id: '3', titulo: 'Botella mediana de aceite de oliva virgen', subtitulo: '1l', precio: '49€', logos: [
+            { nombre: 'Leaf', src: '', alt: '100% Natural de Olivar' },      // Propiedad: Natural (Igual)
+            { nombre: 'Heart', src: '', alt: 'Saludable / Cardio' },        // Propiedad: Salud (Igual)
+            { nombre: 'GlassWater', src: '', alt: 'Formato Estándar 2L' }        // Formato: Mediano (Cambia)
+        ]
+    },
+    'botella-0.5l': {
+        id: '4', titulo: 'Botella mediana de aceite de oliva virgen', subtitulo: '0.5l', precio: '49€', logos: [
+            { nombre: 'Leaf', src: '', alt: '100% Natural de Olivar' },      // Propiedad: Natural (Igual)
+            { nombre: 'Heart', src: '', alt: 'Saludable / Cardio' },        // Propiedad: Salud (Igual)
+            { nombre: 'GlassWater', src: '', alt: 'Formato Estándar 2L' }        // Formato: Mediano (Cambia)
+        ]
+    },
+    'pack-botellas-2l': {
+        id: '5', titulo: 'Pack de 3 botellas mediana de aceite de oliva virgen', subtitulo: '2l', precio: '49€', logos: [
+            { nombre: 'Leaf', src: '', alt: '100% Natural de Olivar' },      // Propiedad: Natural (Igual)
+            { nombre: 'Heart', src: '', alt: 'Saludable / Cardio' },        // Propiedad: Salud (Igual)
+            { nombre: 'GlassWater', src: '', alt: 'Formato Estándar 2L' }        // Formato: Mediano (Cambia)
+        ]
+    },
 };
 
 const caracteristicasProductos = [
@@ -89,102 +110,106 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
     // Si existe la búsqueda
     return (
         <>
-            <div className="bg-[#E1EFE3] w-full h-full">
+            <div className="bg-[#E1EFE3] w-full h-full ">
                 <Header />
-                <div className="w-full py-12 px-8 md:py-26 md:px-12 flex gap-20 justify-between">
-                    {/* section left */}
-                    <div className="flex flex-col w-full items-center gap-8">
-                        <div className="flex flex-col gap-2 justify-center items-center max-w-xl">
-                            <h1 className="text-4xl font-extrabold mb-4 text-textColor text-center">{producto.titulo}</h1>
-                            <h2 className="text-4xl font-extrabold mb-4 text-textColor">{producto.subtitulo}</h2>
-                        </div>
-                        <div className="flex gap-8">
+                <main className="flex flex-col">
 
-                            {/* iconos beneficios producto */}
-                            <ul className="flex flex-col gap-4">
-                                {producto.logos.map((logo, i) => {
+                    <div className="w-full py-12 px-8 md:py-26 md:px-12 gap-20 flex justify-between overflow-hidden">
+                        {/* section left */}
+                        <div className="flex flex-col flex-1 basis-1/2 min-w-0 items-center gap-8">
+                            <div className="flex flex-col gap-2 justify-center items-center max-w-xl">
+                                <h1 className="text-4xl font-extrabold mb-4 text-textColor text-center">{producto.titulo}</h1>
+                                <h2 className="text-4xl font-extrabold mb-4 text-textColor">{producto.subtitulo}</h2>
+                            </div>
+                            <div className="flex gap-8">
 
-                                    const IconoComponente = logo.nombre ? misIconos[logo.nombre] : null;
+                                {/* iconos beneficios producto */}
+                                <ul className="flex flex-col gap-4">
+                                    {producto.logos.map((logo, i) => {
 
-                                    return (
+                                        const IconoComponente = logo.nombre ? misIconos[logo.nombre] : null;
 
-                                        <li key={i} className="flex items-center gap-2" title={logo.alt}>
+                                        return (
 
-                                            {IconoComponente ? (
-                                                <IconoComponente className="w-6 h-6 text-textColor" />
-                                            ) : (
-                                                <span>Icono no encontrado</span>
-                                            )}
+                                            <li key={i} className="flex items-center gap-2" title={logo.alt}>
 
-                                            <span className="text-sm text-gray-600">{logo.alt}</span>
-                                        </li>)
-                                })}
-                            </ul>
-                        </div>
+                                                {IconoComponente ? (
+                                                    <IconoComponente className="w-6 h-6 text-textColor" />
+                                                ) : (
+                                                    <span>Icono no encontrado</span>
+                                                )}
 
-                        {/* Muestra el precio unitario original */}
-                        <div className="flex justify-between items-center gap-2">
-                            <span className="text-xl text-textColor font-semibold">Precio por unidad:</span>
-                            <span className="text-xl font-bold text-textColor">{producto.precio}</span>
-                        </div>
+                                                <span className="text-sm text-gray-600">{logo.alt}</span>
+                                            </li>)
+                                    })}
+                                </ul>
+                            </div>
 
-                        <div>
-                            <SelectorCantidadPrecio producto={producto} />
-                        </div>
+                            {/* Muestra el precio unitario original */}
+                            <div className="flex justify-between items-center gap-2">
+                                <span className="text-xl text-textColor font-semibold">Precio por unidad:</span>
+                                <span className="text-xl font-bold text-textColor">{producto.precio}</span>
+                            </div>
 
-                        {/* ================= SECCIÓN MINI SLIDE DE RECOMENDADOS ================= */}
-                        {recomendados.length > 0 && (
-                            <div className="w-full px-8 md:px-12 py-16 flex flex-col gap-6">
-                                <h3 className="text-2xl font-bold text-textColorb-6">Otros productos que te recomendados</h3>
+                            <div>
+                                <SelectorCantidadPrecio producto={producto} />
+                            </div>
 
-                                {/* Contenedor con scroll horizontal nativo y suave */}
-                                <div className="flex gap-6 overflow-x-auto pb-4 snap-x">
-                                    {recomendados.map((item) => (
-                                        <Link
-                                            href={`/producto/${item.slug}`} // Modifica "/tu-ruta-de-productos/" por como tengas tus carpetas
-                                            key={item.id}
-                                            className="w-[160px] md:w-[260px]  bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-all snap-start flex flex-col justify-between"
-                                        >
-                                            <div className="w-full h-40 bg-gray-200 rounded-xl mb-3 flex items-center justify-center text-gray-400">
-                                                <span>[Imagen {item.subtitulo}]</span>
-                                            </div>
-                                            <div>
-                                                <h4 className="font-bold text-textColor text-md">{item.titulo}</h4>
-                                                <div className="flex justify-between items-center mt-2">
-                                                    <span className="text-xs text-gray-500">Tamaño: {item.subtitulo}</span>
-                                                    <span className="font-bold text-textColor">{item.precio}</span>
+                            {/* ================= SECCIÓN MINI SLIDE DE RECOMENDADOS ================= */}
+                            {recomendados.length > 0 && (
+                                <div className="w-2/5 px-8 md:px-12 py-16 flex flex-col gap-6">
+                                    <h3 className="text-2xl font-bold text-textColorb-6">Otros productos que te recomendados</h3>
+
+                                    {/* Contenedor con scroll horizontal nativo y suave */}
+                                    <div className="gap-6  pb-4 flex overflow-x-auto snap-x snap-mandatory ">
+                                        {recomendados.map((item) => (
+                                            <Link
+                                                href={`/producto/${item.slug}`}
+                                                key={item.id}
+                                                className="w-[160px] md:w-[260px] shrink-0 bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-all snap-start flex flex-col justify-between"
+                                            >
+                                                <div className="w-full h-40 bg-gray-200 rounded-xl mb-3 flex items-center justify-center text-gray-400">
+                                                    <span>[Imagen {item.subtitulo}]</span>
                                                 </div>
-                                            </div>
-                                        </Link>
-                                    ))}
+                                                <div>
+                                                    <h4 className="font-bold text-textColor text-md">{item.titulo}</h4>
+                                                    <div className="flex justify-between items-center mt-2">
+                                                        <span className="text-xs text-gray-500">Tamaño: {item.subtitulo}</span>
+                                                        <span className="font-bold text-textColor">{item.precio}</span>
+                                                    </div>
+                                                </div>
+                                            </Link>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+
+                            <div>
+                                <div className="h-100">
+
+                                    texto desrciptivo embalaje
+                                </div>
+
+                                {/* faqs */}
+                                <div className="w-100">
+
+                                    <FAQ />
                                 </div>
                             </div>
-                        )}
-
-                        <div>
-                            <div className="h-100">
-
-                                texto desrciptivo embalaje
-                            </div>
-
-                            {/* faqs */}
-                            <div className="w-100">
-
-                                <FAQ />
-                            </div>
                         </div>
+
+                        {/* section right */}
+                        <div className="sticky top-12 h-200 basis-1/2 flex-1 bg-amber-400 rounded-4xl">
+                            {/* <Image sizes="" fill src={''} alt="" /> */}
+                        </div>
+
                     </div>
 
-                    {/* section right */}
-                    <div className="sticky top-12 h-200 w-full bg-amber-400 rounded-4xl">
-                        {/* <Image sizes="" fill src={''} alt="" /> */}
-                    </div>
-                </div>
+                    {/* fuera de la estructura de producto */}
+                    <InfiniteMarquee textosNuevos={caracteristicasProductos} />
 
-                {/* fuera de la estructura de producto */}
-                <InfiniteMarquee textosNuevos={caracteristicasProductos} />
-
-                <NavigationBanners />
+                    <NavigationBanners />
+                </main >
             </div >
             <Footer />
         </>

@@ -11,7 +11,9 @@ export const Productos = () => {
 
     const misProductos: Producto[] = [
         { id: 'botella-5l', nombre: 'Botella de aceite de oliva virgen extra', precio: '29€' },
-        { id: 'pantalon-negro', nombre: 'Pantalón Negro', precio: '49€' }
+        { id: 'botella-2l', nombre: 'Pantalón Negro', precio: '49€' },
+        { id: 'botella-1l', nombre: 'Pantalón Negro', precio: '49€' },
+        { id: 'botella-0.5l', nombre: 'Pantalón Negro', precio: '49€' }
     ];
 
     return (
