@@ -2,12 +2,13 @@
 import { Footer } from "@/app/components/Footer";
 import { Header } from "@/app/components/Header";
 import SelectorCantidadPrecio from "@/app/components/SelectorCantidadPrecio";
-import Link from "next/link";
 import { Leaf, Heart, Container, GlassWater, LucideIcon, ArrowUpRight } from 'lucide-react';
 import Image from "next/image";
 import { FAQ } from "@/app/components/FAQ";
 import InfiniteMarquee from "@/app/components/InfiniteMarquee";
 import { NavigationBanners } from "@/app/components/NavigationBanners";
+import { SlideProducts } from "@/app/components/SlideProducts";
+
 
 
 interface Logo {
@@ -98,6 +99,7 @@ async function obtenerProductosRecomendados(urlActual: string) {
 export default async function DetalleProductoPage({ params }: PaginaProps) {
     const { id } = await params;
 
+
     // Buscamos el producto actual y sus recomendados
     const producto = await obtenerDetalleProducto(id);
     const recomendados = await obtenerProductosRecomendados(id);
@@ -155,34 +157,10 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
                                 <SelectorCantidadPrecio producto={producto} />
                             </div>
 
-                            {/* ================= SECCIÓN MINI SLIDE DE RECOMENDADOS ================= */}
-                            {recomendados.length > 0 && (
-                                <div className="w-2/5 px-8 md:px-12 py-16 flex flex-col gap-6">
-                                    <h3 className="text-2xl font-bold text-textColorb-6">Otros productos que te recomendados</h3>
 
-                                    {/* Contenedor con scroll horizontal nativo y suave */}
-                                    <div className="gap-6  pb-4 flex overflow-x-auto snap-x snap-mandatory ">
-                                        {recomendados.map((item) => (
-                                            <Link
-                                                href={`/producto/${item.slug}`}
-                                                key={item.id}
-                                                className="w-[160px] md:w-[260px] shrink-0 bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-all snap-start flex flex-col justify-between"
-                                            >
-                                                <div className="w-full h-40 bg-gray-200 rounded-xl mb-3 flex items-center justify-center text-gray-400">
-                                                    <span>[Imagen {item.subtitulo}]</span>
-                                                </div>
-                                                <div>
-                                                    <h4 className="font-bold text-textColor text-md">{item.titulo}</h4>
-                                                    <div className="flex justify-between items-center mt-2">
-                                                        <span className="text-xs text-gray-500">Tamaño: {item.subtitulo}</span>
-                                                        <span className="font-bold text-textColor">{item.precio}</span>
-                                                    </div>
-                                                </div>
-                                            </Link>
-                                        ))}
-                                    </div>
-                                </div>
-                            )}
+                            <SlideProducts recomendados={recomendados} />
+
+
 
                             <div>
                                 <div className="h-100">
