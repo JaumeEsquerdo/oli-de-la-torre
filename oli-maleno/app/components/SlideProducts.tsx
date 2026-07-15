@@ -45,7 +45,7 @@ export const SlideProducts = ({ recomendados }: SlideProductsProps) => {
             {
                 recomendados.length > 0 && (
                     <div className="w-full px-8 md:px-12 py-16 flex flex-col gap-6">
-                        <h3 className="text-2xl font-bold text-textColorb-6">Otros productos que te recomendados</h3>
+                        <h3 className="text-2xl font-bold text-[#1d1d1d] b-6">Otros productos que te recomendados</h3>
 
                         {/* <div className="relative w-full">
                             {leftOpacity > 0 && (

@@ -55,8 +55,8 @@ export default function SelectorCantidadPrecio({ producto }: SelectorCantidadPre
 
 
             {/* Selector de cantidad */}
-            <div className="flex justify-between items-center">
-                <span className="text-gray-600 font-medium">Cantidad:</span>
+            <div className="flex justify-center items-center">
+                {/* <span className="text-[#666] font-medium">Cantidad:</span> */}
                 <div className="flex items-center overflow-hidden">
                     <button
                         type="button"

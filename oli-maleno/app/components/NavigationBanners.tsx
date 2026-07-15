@@ -22,10 +22,10 @@ export const NavigationBanners = () => {
         transition-all duration-500 ease-in-out
         pointer-events-none 
                     `}>
-                    <ArrowUpRight className="w-6 h-6 text-green-500 stroke-[1.5]" />
+                    <ArrowUpRight className="w-6 h-6 text-textColor stroke-[1.5]" />
                 </div>
             </div>
-            <div className="group relative w-full md:w-2/5 h-160 bg-amber-400 rounded-4xl z-10 cursor-pointer"
+            <div className="group relative w-full md:w-2/5 h-160 bg-[#5B9675] rounded-4xl z-10 cursor-pointer"
 
             >
                 <h3 className="text-4xl text-white absolute top-10 left-10">preguntas y respuestas más habituales sobre el aceite y el envío</h3>
@@ -34,7 +34,7 @@ export const NavigationBanners = () => {
         [animation-play-state:paused] 
         group-hover:[animation-play-state:running] 
         transition-all duration-500 ease-in-out pointer-events-none`}>
-                    <ArrowUpRight className="w-6 h-6 text-green-500 stroke-[1.5]" />
+                    <ArrowUpRight className="w-6 h-6 text-textColor stroke-[1.5]" />
                 </div>
             </div>
         </div>

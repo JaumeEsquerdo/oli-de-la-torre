@@ -76,11 +76,11 @@ const baseDeDatos: Record<string, Producto> = {
 };
 
 const caracteristicasProductos = [
-    { title: 'Formato Familiar', color: '#03ad3f' },
-    { title: 'Garrafa 5 Litros', color: '#15472b' },
-    { title: 'Botella 2 Litros', color: '#03ad3f' },
-    { title: 'Ideal para Cocinar', color: '#15472b' },
-    { title: 'Botella 2 Litros', color: '#03ad3f' },
+    { title: 'Formato Familiar', color: '#15472b' },
+    { title: 'Garrafa 5 Litros', color: '#5B9675' },
+    { title: 'Botella 2 Litros', color: '#15472b' },
+    { title: 'Ideal para Cocinar', color: '#5B9675' },
+    { title: 'Botella 2 Litros', color: '#15472b' },
 ];
 
 //  Función para buscar el producto por su ID (la ruta ej: 'botella-5l')
@@ -142,7 +142,7 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
                                                     <span>Icono no encontrado</span>
                                                 )}
 
-                                                <span className="text-sm text-gray-600">{logo.alt}</span>
+                                                <span className="text-sm text-[#666]">{logo.alt}</span>
                                             </li>)
                                     })}
                                 </ul>
