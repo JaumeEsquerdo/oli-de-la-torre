@@ -40,9 +40,12 @@ export default function Home() {
         {/* seccion FAQ */}
         <div id="preguntas" className="scroll-mt-46 h-fit w-full flex flex-col-reverse gap-8 md:flex-row justify-between px-4 md:p-12">
           <div className="inline-block bg-amber-600 w-full md:w-1/2 h-120 relative rounded-4xl"></div>
-          <div className="flex flex-col w-full md:w-1/2 justify-between md:items-end gap-10">
+          <div className="relative flex flex-col w-full md:w-1/2 justify-between md:items-end gap-10">
             <h2 className="text-2xl text-center md:text-start">preguntas recurrentes</h2>
-            <FAQ />
+            {/* ponemos un top-20 para saltar al h2 y sumarle 40px de separación*/}
+            <div className="absolute right-0 top-20 w-full">
+              <FAQ />
+            </div>
           </div>
         </div>
         {/* seccion FORMULARIO */}

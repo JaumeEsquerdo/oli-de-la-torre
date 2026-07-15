@@ -117,7 +117,7 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
                 <Header />
                 <main className="flex flex-col">
 
-                    <div className="w-full py-12 px-8 md:py-26 md:px-12 gap-20 flex justify-between overflow-hidden">
+                    <div className="w-full py-12 px-8 md:py-26 md:px-12 gap-20 flex justify-between">
                         {/* section left */}
                         <div className="flex flex-col flex-1 basis-1/2 min-w-0 items-center gap-8">
                             <div className="flex flex-col gap-2 justify-center items-center max-w-xl">
@@ -164,7 +164,7 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
 
 
                             <div>
-                                <div className="h-100">
+                                <div className="h-100 text-textBlack">
 
                                     texto desrciptivo embalaje
                                 </div>
