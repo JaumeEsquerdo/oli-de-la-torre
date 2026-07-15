@@ -78,7 +78,7 @@ export const SlideProducts = ({ recomendados }: SlideProductsProps) => {
                                         key={item.id}
                                         onDragStart={(e) => e.preventDefault()}
                                         onClick={(e) => isDragging && e.preventDefault()}
-                                        className="w-[160px] md:w-[260px] shrink-0 bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-all snap-start flex flex-col justify-between"
+                                        className="w-[120px] md:w-[220px] shrink-0 bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-all snap-start flex flex-col justify-between"
                                     >
                                         <div className="w-full h-40 bg-gray-200 rounded-xl mb-3 flex items-center justify-center text-gray-400">
                                             <span>[Imagen {item.subtitulo}]</span>

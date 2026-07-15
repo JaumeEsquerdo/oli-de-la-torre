@@ -4,10 +4,12 @@
   --background: #ffffff;
   --foreground: #171717;
   --textColor: #15472b;
+  --bgColor: #e1efe3;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-bgColor: var(--bgColor);
   --color-foreground: var(--foreground);
   --color-textColor: var(--textColor);
   --font-sans: var(--font-geist-sans);

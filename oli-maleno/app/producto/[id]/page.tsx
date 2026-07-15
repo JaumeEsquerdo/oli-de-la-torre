@@ -112,7 +112,7 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
     // Si existe la búsqueda
     return (
         <>
-            <div className="bg-[#E1EFE3] w-full h-full ">
+            <div className="bg-bgColor w-full h-full ">
                 <Header />
                 <main className="flex flex-col">
 
@@ -171,7 +171,7 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
                                 {/* faqs */}
                                 <div className="w-100">
 
-                                    <FAQ />
+                                    <FAQ bgColor="#e1efe3" color="#15472b" />
                                 </div>
                             </div>
                         </div>

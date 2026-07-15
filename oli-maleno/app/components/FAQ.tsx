@@ -31,7 +31,7 @@ const dataFAQ: FaqItem[] = [
     }
 ]
 
-export const FAQ = ({ color = "#000000", textSecondary = "#666666" }) => {
+export const FAQ = ({ color = "#000000", textSecondary = "#666666", bgColor = '#ffffff' }) => {
     const [hoveredTab, setHoveredTab] = useState<string | null>(null)
     const [pressedTab, setPressedTab] = useState<string | null>(null)
 
@@ -66,8 +66,8 @@ export const FAQ = ({ color = "#000000", textSecondary = "#666666" }) => {
                                 stiffness: 300,
                                 damping: 30
                             }}
-                            style={{ backgroundColor: 'white' }}
-                            className={`relative w-full max-w-80 md:max-w-100 rounded-4xl flex justify-center items-start cursor-pointer z-20  ${isHovered && " text-white"}  duration-200 transition-colors ${i > 0 ? "-mt-0.5" : ""}`}>
+                            style={{ backgroundColor: bgColor }}
+                            className={`relative w-full max-w-80 md:max-w-100 rounded-4xl flex justify-center items-start cursor-pointer z-20  ${isHovered && " text-[bgColor]"}  duration-200 transition-colors ${i > 0 ? "-mt-0.5" : ""}`}>
 
 
                             {/* borde q no se oculta con la burbuja del hover */}
@@ -78,7 +78,7 @@ export const FAQ = ({ color = "#000000", textSecondary = "#666666" }) => {
                                 // onMouseLeave={() => setHoveredTab(null)}
                                 className="absolute top-0 left-0 w-full h-20 flex items-center px-6 z-10 rounded-4xl"
                             >
-                                <span style={{ color: isHovered ? "white" : color }} className={`inline-block z-20 font-medium transition-colors duration-200  rounded-4xl`}>
+                                <span style={{ color: isHovered ? bgColor : color }} className={`inline-block z-20 font-medium transition-colors duration-200  rounded-4xl`}>
                                     {data.title}
                                 </span>
 
@@ -110,7 +110,6 @@ export const FAQ = ({ color = "#000000", textSecondary = "#666666" }) => {
                                     </motion.div>
                                 )}
                             </AnimatePresence>
-
 
                         </motion.div >
                     )
