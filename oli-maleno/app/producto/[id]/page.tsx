@@ -76,10 +76,11 @@ const baseDeDatos: Record<string, Producto> = {
 };
 
 const caracteristicasProductos = [
-    { title: 'Formato Familiar', color: '#000' },
-    { title: 'Garrafa 5 Litros', color: '#333' },
-    { title: 'Botella 2 Litros', color: '#333' },
-    { title: 'Ideal para Cocinar', color: '#ebc034' }
+    { title: 'Formato Familiar', color: '#03ad3f' },
+    { title: 'Garrafa 5 Litros', color: '#15472b' },
+    { title: 'Botella 2 Litros', color: '#03ad3f' },
+    { title: 'Ideal para Cocinar', color: '#15472b' },
+    { title: 'Botella 2 Litros', color: '#03ad3f' },
 ];
 
 //  Función para buscar el producto por su ID (la ruta ej: 'botella-5l')
