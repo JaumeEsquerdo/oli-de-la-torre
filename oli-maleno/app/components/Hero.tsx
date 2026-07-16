@@ -44,7 +44,7 @@ export const Hero = () => {
     const hoverState = isDesktop ? "hover" : "initial";
     return (
         <>
-            <MotionLink href={Links[0].href} variants={variantContainerLeft} initial='initial' animate='show' whileHover={hoverState} transition={{ duration: 1.4, ease: "easeInOut" }}
+            <MotionLink href={Links[0].href} variants={variantContainerLeft} initial='initial' animate='show' whileHover={hoverState} transition={{ duration: 2.8, ease: "easeInOut" }}
                 className="cursor-pointer w-11/12 h-[60dvh] md:w-3/5 md:h-[70dvh] bg-red-800/80 p-12 rounded-4xl">
                 <div className="flex items-center gap-3">
                     <span className="h-4 w-4 rounded-full bg-white" /> {/* círculo */}
@@ -69,7 +69,7 @@ export const Hero = () => {
             </MotionLink >
 
             <div className="gap-0 flex flex-col items-center md:w-2/5 md:gap-4 ">
-                <MotionLink href={Links[1].href} variants={variantContainerRight} initial='initial' animate='show' whileHover={hoverState} transition={{ duration: 1.2, delay: 0.4, ease: "easeInOut" }} className="cursor-pointer w-11/12 h-[40dvh] md:w-full md:h-[calc(35dvh-0.5rem)] bg-green-800/80 p-12 z-10 -mt-10 md:mt-0 rounded-4xl">
+                <MotionLink href={Links[1].href} variants={variantContainerRight} initial='initial' animate='show' whileHover={hoverState} transition={{ duration: 3, delay: 0.4, ease: "easeInOut" }} className="cursor-pointer w-11/12 h-[40dvh] md:w-full md:h-[calc(35dvh-0.5rem)] bg-green-800/80 p-12 z-10 -mt-10 md:mt-0 rounded-4xl">
                     <div className="flex items-center gap-3">
                         <span className="h-4 w-4 rounded-full bg-white" /> {/* círculo */}
                         <div className="h-10 overflow-hidden relative ">
@@ -85,7 +85,7 @@ export const Hero = () => {
                     </div>
                 </MotionLink>
 
-                <MotionLink href={Links[2].href} variants={variantContainerRight} initial='initial' animate='show' whileHover={hoverState} transition={{ duration: 1, delay: 1, ease: "easeInOut" }} className="cursor-pointer w-11/12 h-[40dvh] md:w-full md:h-[calc(35dvh-0.5rem)] bg-yellow-800/80 p-12 z-20 -mt-10 md:mt-0 rounded-4xl">
+                <MotionLink href={Links[2].href} variants={variantContainerRight} initial='initial' animate='show' whileHover={hoverState} transition={{ duration: 2.4, delay: 1, ease: "easeInOut" }} className="cursor-pointer w-11/12 h-[40dvh] md:w-full md:h-[calc(35dvh-0.5rem)] bg-yellow-800/80 p-12 z-20 -mt-10 md:mt-0 rounded-4xl">
                     <div className="flex items-center gap-3">
                         <span className="h-4 w-4 rounded-full bg-white" /> {/* círculo */}
                         <div className="h-20 md:h-10 overflow-hidden relative ">
