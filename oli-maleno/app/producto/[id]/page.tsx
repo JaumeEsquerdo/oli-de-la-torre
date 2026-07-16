@@ -8,6 +8,7 @@ import { FAQ } from "@/app/components/FAQ";
 import InfiniteMarquee from "@/app/components/InfiniteMarquee";
 import { NavigationBanners } from "@/app/components/NavigationBanners";
 import { SlideProducts } from "@/app/components/SlideProducts";
+import ScrollToTop from "@/app/components/ScrollToTop";
 
 
 
@@ -83,6 +84,8 @@ const caracteristicasProductos = [
     { title: 'Botella 2 Litros', color: '#15472b' },
 ];
 
+
+
 //  Función para buscar el producto por su ID (la ruta ej: 'botella-5l')
 async function obtenerDetalleProducto(id: string): Promise<Producto | null> {
     return baseDeDatos[id] || null;
@@ -101,6 +104,8 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
     const { id } = await params;
 
 
+
+
     // Buscamos el producto actual y sus recomendados
     const producto = await obtenerDetalleProducto(id);
     const recomendados = await obtenerProductosRecomendados(id);
@@ -113,6 +118,9 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
     // Si existe la búsqueda
     return (
         <>
+            {/* componente para al cambiar de params la página aparezca desde el top */}
+            <ScrollToTop />
+
             <div className="bg-bgColor w-full h-full ">
                 <Header />
                 <main className="flex flex-col">
