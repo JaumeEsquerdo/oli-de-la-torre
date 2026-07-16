@@ -1,24 +1,22 @@
 
 import { Footer } from "@/app/components/Footer";
 import { Header } from "@/app/components/Header";
-import SelectorCantidadPrecio from "@/app/components/SelectorCantidadPrecio";
-import { Leaf, Heart, Container, GlassWater, LucideIcon, ArrowUpRight } from 'lucide-react';
 import Image from "next/image";
-import { FAQ } from "@/app/components/FAQ";
 import InfiniteMarquee from "@/app/components/InfiniteMarquee";
 import { NavigationBanners } from "@/app/components/NavigationBanners";
-import { SlideProducts } from "@/app/components/SlideProducts";
 import ScrollToTop from "@/app/components/ScrollToTop";
+import { SectionRightProduct } from "@/app/components/SectionRightProduct";
+import { SectionLeftProduct } from "@/app/components/SectionLeftProduct";
 
 
 
-interface Logo {
+export interface Logo {
     src: string;
     alt: string;
     nombre?: string; // Por si quieres poner un texto abajo del logo
 }
 
-interface Producto {
+export interface Producto {
     id: string;
     titulo: string;
     subtitulo: string;
@@ -26,17 +24,16 @@ interface Producto {
     logos: Logo[]
 }
 
+export interface ProductoRecomendado extends Producto {
+    slug: string;
+}
+
 interface PaginaProps {
     params: Promise<{ id: string }>;
 }
 
 
-const misIconos: Record<string, LucideIcon> = {
-    Leaf: Leaf,
-    Heart: Heart,
-    Container: Container,
-    GlassWater: GlassWater
-};
+
 
 const baseDeDatos: Record<string, Producto> = {
     'botella-5l': {
@@ -127,68 +124,11 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
 
                     <div className="w-full py-12 px-8 md:py-26 md:px-12 gap-20 flex justify-between">
                         {/* section left */}
-                        <div className="flex flex-col flex-1 basis-1/2 min-w-0 items-center gap-8">
-                            <div className="flex flex-col gap-2 justify-center items-center max-w-xl">
-                                <h1 className="text-4xl font-extrabold mb-4 text-textColor text-center">{producto.titulo}</h1>
-                                <h2 className="text-4xl font-extrabold mb-4 text-textColor">{producto.subtitulo}</h2>
-                            </div>
-                            <div className="flex gap-8">
+                        <SectionLeftProduct producto={producto} recomendados={recomendados} />
 
-                                {/* iconos beneficios producto */}
-                                <ul className="flex flex-col gap-4">
-                                    {producto.logos.map((logo, i) => {
-
-                                        const IconoComponente = logo.nombre ? misIconos[logo.nombre] : null;
-
-                                        return (
-
-                                            <li key={i} className="flex items-center gap-2" title={logo.alt}>
-
-                                                {IconoComponente ? (
-                                                    <IconoComponente className="w-6 h-6 text-textColor" />
-                                                ) : (
-                                                    <span>Icono no encontrado</span>
-                                                )}
-
-                                                <span className="text-sm text-[#666]">{logo.alt}</span>
-                                            </li>)
-                                    })}
-                                </ul>
-                            </div>
-
-                            {/* Muestra el precio unitario original */}
-                            <div className="flex justify-between items-center gap-2">
-                                <span className="text-xl text-textColor font-semibold">Precio por unidad:</span>
-                                <span className="text-xl font-bold text-textColor">{producto.precio}</span>
-                            </div>
-
-                            <div>
-                                <SelectorCantidadPrecio producto={producto} />
-                            </div>
-
-
-                            <SlideProducts recomendados={recomendados} />
-
-
-
-                            <div>
-                                <div className="h-100 text-textBlack">
-
-                                    texto desrciptivo embalaje
-                                </div>
-
-                                {/* faqs */}
-                                <div className="w-100">
-
-                                    <FAQ bgColor="#e1efe3" color="#15472b" />
-                                </div>
-                            </div>
-                        </div>
 
                         {/* section right */}
-                        <div className="sticky top-12 h-200 basis-1/2 flex-1 bg-amber-400 rounded-4xl">
-                            {/* <Image sizes="" fill src={''} alt="" /> */}
-                        </div>
+                        <SectionRightProduct />
 
                     </div>
 
