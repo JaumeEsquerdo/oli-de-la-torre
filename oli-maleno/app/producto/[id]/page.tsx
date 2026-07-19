@@ -102,8 +102,6 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
     const { id } = await params;
 
 
-
-
     // Buscamos el producto actual y sus recomendados
     const producto = await obtenerDetalleProducto(id);
     const recomendados = await obtenerProductosRecomendados(id);

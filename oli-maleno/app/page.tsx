@@ -73,7 +73,7 @@ export default function Home() {
       <div className="flex flex-col flex-1 items-center justify-center bg-white overflow-hidden">
         <span className="absolute top-2 left-1/2 -translate-x-1/2 text-sm text-center text-[#666]">envíos gratuitos con pedidos superior a 100€</span>
         <Header />
-        <main className="flex flex-col gap-16 md:gap-20 flex-1 pt-8 md:pt-20 w-full">
+        <main className="flex flex-col gap-16 md:gap-20 flex-1 pt-16 md:pt-20 w-full">
 
           {/* HERO con nav en contenedores */}
           <div className="flex flex-col md:flex-row md:mx-12 md:gap-4 items-center ">
@@ -95,11 +95,11 @@ export default function Home() {
           <AnimatedCard />
           {/* seccion FAQ */}
           <div id="preguntas" className="scroll-mt-46 h-fit w-full flex flex-col-reverse gap-8 md:flex-row justify-between px-4 md:p-12">
-            <div className="inline-block bg-amber-600 w-full md:w-1/2 h-120 relative rounded-4xl"></div>
+            <div className="hidden md:inline-block bg-amber-600 w-full md:w-1/2 h-120 relative rounded-4xl"></div>
             <div className="relative flex flex-col w-full md:w-1/2 justify-between md:items-end gap-10">
               <h2 className="text-2xl text-center md:text-start">preguntas recurrentes</h2>
               {/* ponemos un top-20 para saltar al h2 y sumarle 40px de separación*/}
-              <div className="absolute right-0 top-20 w-full">
+              <div className="relative md:absolute md:right-0 md:top-20 w-full">
                 <FAQ />
               </div>
             </div>
