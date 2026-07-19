@@ -21,6 +21,7 @@ export interface Producto {
     titulo: string;
     subtitulo: string;
     precio: string;
+    bg: string,
     logos: Logo[]
 }
 
@@ -37,35 +38,35 @@ interface PaginaProps {
 
 const baseDeDatos: Record<string, Producto> = {
     'botella-5l': {
-        id: '1', titulo: 'Botella grande de aceite de oliva virgen', subtitulo: '5l', precio: '29€', logos: [
+        id: '1', titulo: 'Botella grande de aceite de oliva virgen', subtitulo: '5l', bg: "#e1efe3", precio: '29€', logos: [
             { nombre: 'Leaf', src: '', alt: '100% Natural de Olivar' },      // Propiedad: Natural
             { nombre: 'Heart', src: '', alt: 'Saludable / Cardio' },        // Propiedad: Salud
             { nombre: 'Container', src: '', alt: 'Formato Familiar 5L' }    // Formato: Grande
         ]
     },
     'botella-2l': {
-        id: '2', titulo: 'Botella mediana de aceite de oliva virgen', subtitulo: '2l', precio: '49€', logos: [
+        id: '2', titulo: 'Botella mediana de aceite de oliva virgen', subtitulo: '2l', bg: "#f3f4f6 ", precio: '49€', logos: [
             { nombre: 'Leaf', src: '', alt: '100% Natural de Olivar' },      // Propiedad: Natural (Igual)
             { nombre: 'Heart', src: '', alt: 'Saludable / Cardio' },        // Propiedad: Salud (Igual)
             { nombre: 'GlassWater', src: '', alt: 'Formato Estándar 2L' }        // Formato: Mediano (Cambia)
         ]
     },
     'botella-1l': {
-        id: '3', titulo: 'Botella mediana de aceite de oliva virgen', subtitulo: '1l', precio: '49€', logos: [
+        id: '3', titulo: 'Botella mediana de aceite de oliva virgen', subtitulo: '1l', bg: "#f3f4f6 ", precio: '49€', logos: [
             { nombre: 'Leaf', src: '', alt: '100% Natural de Olivar' },      // Propiedad: Natural (Igual)
             { nombre: 'Heart', src: '', alt: 'Saludable / Cardio' },        // Propiedad: Salud (Igual)
             { nombre: 'GlassWater', src: '', alt: 'Formato Estándar 2L' }        // Formato: Mediano (Cambia)
         ]
     },
     'botella-0.5l': {
-        id: '4', titulo: 'Botella mediana de aceite de oliva virgen', subtitulo: '0.5l', precio: '49€', logos: [
+        id: '4', titulo: 'Botella mediana de aceite de oliva virgen', subtitulo: '0.5l', bg: "#e1efe3", precio: '49€', logos: [
             { nombre: 'Leaf', src: '', alt: '100% Natural de Olivar' },      // Propiedad: Natural (Igual)
             { nombre: 'Heart', src: '', alt: 'Saludable / Cardio' },        // Propiedad: Salud (Igual)
             { nombre: 'GlassWater', src: '', alt: 'Formato Estándar 2L' }        // Formato: Mediano (Cambia)
         ]
     },
     'pack-botellas-2l': {
-        id: '5', titulo: 'Pack de 3 botellas mediana de aceite de oliva virgen', subtitulo: '2l', precio: '49€', logos: [
+        id: '5', titulo: 'Pack de 3 botellas mediana de aceite de oliva virgen', subtitulo: '2l', bg: "#f3f4f6 ", precio: '49€', logos: [
             { nombre: 'Leaf', src: '', alt: '100% Natural de Olivar' },      // Propiedad: Natural (Igual)
             { nombre: 'Heart', src: '', alt: 'Saludable / Cardio' },        // Propiedad: Salud (Igual)
             { nombre: 'GlassWater', src: '', alt: 'Formato Estándar 2L' }        // Formato: Mediano (Cambia)
@@ -118,14 +119,15 @@ export default async function DetalleProductoPage({ params }: PaginaProps) {
             {/* componente para al cambiar de params la página aparezca desde el top */}
             <ScrollToTop />
 
-            <div className="bg-bgColor w-full h-full ">
+            <div
+                style={{ backgroundColor: producto.bg }}
+                className={`w-full h-full`}>
                 <Header />
                 <main className="flex flex-col">
 
                     <div className="w-full py-12 px-8 md:py-26 md:px-12 gap-20 flex justify-between">
                         {/* section left */}
                         <SectionLeftProduct producto={producto} recomendados={recomendados} />
-
 
                         {/* section right */}
                         <SectionRightProduct />
