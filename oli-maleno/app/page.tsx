@@ -73,7 +73,7 @@ export default function Home() {
       <div className="flex flex-col flex-1 items-center justify-center bg-white overflow-hidden">
         <span className="absolute top-2 left-1/2 -translate-x-1/2 text-sm text-center text-[#666]">envíos gratuitos con pedidos superior a 100€</span>
         <Header />
-        <main className="flex flex-col gap-16 md:gap-20 flex-1 pt-16 md:pt-20 w-full">
+        <main className="flex flex-col gap-16 md:gap-20 flex-1 pt-24 md:pt-20 w-full">
 
           {/* HERO con nav en contenedores */}
           <div className="flex flex-col md:flex-row md:mx-12 md:gap-4 items-center ">
