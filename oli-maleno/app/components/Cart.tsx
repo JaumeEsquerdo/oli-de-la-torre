@@ -26,7 +26,7 @@ export const Cart = ({ close }: Close) => {
                     animate="animate"
                     exit="exit"
                     key="cart-full" className='flex flex-col gap-2 relative bg-gray-50 p-4 rounded-4xl'>
-                    <span className='absolute top-4 right-6' onClick={close}>X</span>
+                    <span className='absolute top-4 right-6 cursor-pointer p-2 rounded-full w-10 h-10 flex items-center justify-center hover:bg-white hover:border-2 hover:border-gray-700 transition-colors duration-150' onClick={close}>X</span>
                     <div className='flex flex-col gap-4'>
                         <h3 className="font-bold text-lg text-gray-800">Tu Carrito</h3>
 
