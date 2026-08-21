@@ -34,7 +34,7 @@ export const Footer = () => {
                     }
                     <div className='flex flex-col gap-2'>
                         <Link href={'/privacidad'} className=' font-medium text-[#666] hover:text-[#666]/80 '>Politica de privacidad</Link>
-                        <Link href={'/condiciones'} className=' font-medium text-[#666] hover:text-[#666]/80 '>Términos y condiciones</Link>
+                        <Link href={'/condiciones'} className=' font-medium text-[#666] hover:text-[#666]/80 '>Aviso Legal y Condiciones de Uso</Link>
                     </div>
 
                 </div>
